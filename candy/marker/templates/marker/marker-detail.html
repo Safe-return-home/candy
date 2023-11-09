@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div>주소: {{ marker.address }}</div>
+<div>가로등 수: {{ marker.street_lamp }}</div>
+<div>유동인구 수: {{ marker.population }}</div>
+<div>안전캔디: {{ marker.rating }}</div>
+<div>자세한리뷰: {{ marker.body }}</div>
+<div>작성일: {{ marker.regTime }}</div>
+
+{% for comment in comments%}
+<br>
+<div>이름: {{ comment.user.userName }}</div>
+<div>내용: {{ comment.body }}</div>
+{% endfor %}
+
+<form action="{% url 'marker:marker_detail' pk=marker.pk %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="body" id="body">
+    <button type="submit">댓글쓰기</button>
+</form>
+
+{% endblock %}
