@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <a href="http://127.0.0.1:8000/users/oauth">카카오로 시작하기</a>
+    <a href="{% url 'user:oauth' %}">카카오로 시작하기</a>
 {% endblock %}

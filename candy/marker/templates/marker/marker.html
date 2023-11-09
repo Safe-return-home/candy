@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <div>
-  <div id="map" style="width: 500px; height: 400px; margin: 0 auto"></div>
+  <div id="map" style="width: 300px; height: 400px; margin: 0 auto"></div>
   <!--POST로 뷰에 위도, 경도 정보 보냄-->
   <form action="{% url 'marker:markers' %}" method="post">
     {% csrf_token %}
@@ -16,7 +16,7 @@
     <div>유동인구: {{ marker.population }}</div>
     <div>가로등: {{ marker.street_lamp }}</div>
     <div>작성일: {{ marker.regTime }}</div>
-    <a href="http://127.0.0.1:8000/markers/{{marker.pk}}">상세보기</a>
+    <a href="{% url 'marker:marker_detail' pk=marker.pk %}">상세보기</a>
   </div>
   {% endfor %}
 
