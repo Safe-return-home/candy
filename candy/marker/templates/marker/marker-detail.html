@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<a href="{% url 'marker:detail_delete' marker.id %}">삭제</a>
 <div>주소: {{ marker.address }}</div>
 <div>가로등 수: {{ marker.street_lamp }}</div>
 <div>유동인구 수: {{ marker.population }}</div>
