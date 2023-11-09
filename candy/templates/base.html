@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko">
-{% include 'head.html' %}
-<body>
-    <div style="margin: 0 auto; text-align:center;">
-        {% include 'header.html' %}
-        <hr>
-        {% block content %}
-        {% endblock %}
-        <hr>
-        {% include 'footer.html' %}
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>{% block head_title %}내 귀가 캔디{% endblock %}</title>
+    <link
+      href="/static/images/candy.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    <link rel="stylesheet" href="{% static 'police.css'%}" />
+  </head>
+  {% include 'head.html' %}
+  <body>
+    <div style="margin: 0 auto; text-align: center" class="content">
+      {% include 'header.html' %}
+      <hr />
+      {% block content %} {% endblock %}
+      <hr />
+      {% include 'footer.html' %}
     </div>
-</body>
+  </body>
 </html>

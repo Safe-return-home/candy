@@ -3,21 +3,25 @@ import requests
 from .models import Marker, Comment
 
 # 지도 기본
+
+
 def marker_view(request):
     # 기본 페이지
-    if request.method=='GET':
+    if request.method == 'GET':
         return render(request, 'marker/marker.html', {})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
-    elif request.method=='POST':
+    elif request.method == 'POST':
         latitude = float(request.POST.get('latitude'))
         longitude = float(request.POST.get('longitude'))
         filtered_markers = Marker.objects.filter(
             latitude__range=(latitude - 0.001, latitude + 0.001),
             longitude__range=(longitude - 0.001, longitude + 0.001)
         )
-        return render(request, 'marker/marker.html', { "markers":filtered_markers })
+        return render(request, 'marker/marker.html', {"markers": filtered_markers})
 
 # 지도 상세
+
+
 def marker_detail_view(request, pk):
     marker = Marker.objects.get(pk=pk)
     # 댓글 작성
@@ -36,12 +40,14 @@ def marker_detail_view(request, pk):
     return render(request, 'marker/marker-detail.html', {"marker": marker, "comments": comments})
 
 # 지도 작성 (미완성)
+
+
 def marker_edit_view(request):
     # 기본 페이지
-    if request.method=='GET':
+    if request.method == 'GET':
         return render(request, './marker/marker-edit.html', {})
     # 작성 클릭 시
-    if request.method=='POST':
+    if request.method == 'POST':
         user = request.user
         latitude = request.POST.get('latitude')
         longitude = request.POST.get('longitude')
@@ -58,14 +64,20 @@ def marker_edit_view(request):
         address = data['documents'][0]['road_address']['address_name']
 
         Marker.objects.create(
-            user = user,
-            address = address,
-            latitude = latitude,
-            longitude = longitude,
-            street_lamp = street_lamp,
-            population = population,
-            rating = rating,
-            body = body,
-            image = image
+            user=user,
+            address=address,
+            latitude=latitude,
+            longitude=longitude,
+            street_lamp=street_lamp,
+            population=population,
+            rating=rating,
+            body=body,
+            image=image
         )
         return redirect('marker:markers')
+
+# police 조회
+
+
+def marker_police_view(request):
+    return render(request, 'marker/police.html')
