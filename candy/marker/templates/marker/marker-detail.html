@@ -12,6 +12,7 @@
 <br>
 <div>이름: {{ comment.user.userName }}</div>
 <div>내용: {{ comment.body }}</div>
+<div>작성일: {{ comment.regTime }}</div>
 {% endfor %}
 
 <form action="{% url 'marker:marker_detail' pk=marker.pk %}" method="post">
