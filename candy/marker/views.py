@@ -11,13 +11,14 @@ def marker_view(request):
         return render(request, 'marker/marker.html', {})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
     elif request.method == 'POST':
-        latitude = float(request.POST.get('latitude'))
-        longitude = float(request.POST.get('longitude'))
+        status = int(request.POST.get('status', 0))
+        latitude = float(request.POST.get('latitude', 33.450701))
+        longitude = float(request.POST.get('longitude', 126.570667))
         filtered_markers = Marker.objects.filter(
             latitude__range=(latitude - 0.001, latitude + 0.001),
             longitude__range=(longitude - 0.001, longitude + 0.001)
         )
-        return render(request, 'marker/marker.html', {"markers": filtered_markers})
+        return render(request, 'marker/marker.html', {"markers": filtered_markers, "status": status})
 
 # 지도 상세
 

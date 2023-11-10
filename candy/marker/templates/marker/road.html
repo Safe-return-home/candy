@@ -1,0 +1,62 @@
+<!--POST로 뷰에 위도, 경도 정보 보냄-->
+<form action="{% url 'marker:markers' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="latitude" id="latitude" />
+  <input type="hidden" name="longitude" id="longitude" />
+  <button type="submit" class="search_road">주변 상황 보기</button>
+</form>
+<!--받아온 정보가 있다면 출력-->
+{% for marker in markers %}
+<a class="preview" href="{% url 'marker:marker_detail' pk=marker.pk %}">
+  <div class="rating">
+    <div>
+      {% with rating_count=marker.rating %} {% for i in ''|rjust:rating_count %}
+      <img src="/static/images/purplecandy.png" width="20" />
+      {% endfor %} {% endwith %}
+    </div>
+    {{marker.regTime | date:"Y.m.d"}}
+  </div>
+  <div class="pre_content">
+    <p class="pre_title">유동인구</p>
+    <p>{{ marker.population }}</p>
+    <p>|</p>
+    <p class="pre_title">가로등</p>
+    <p>{{ marker.street_lamp }}</p>
+  </div>
+</a>
+{% endfor %}
+<a class="edit_road" href="{% url 'marker:marker_edit'%}">작성하기</a>
+<script>
+  var options = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667),
+    level: 5,
+  };
+
+  var map = new kakao.maps.Map(document.getElementById("map"), options);
+  var marker;
+
+  kakao.maps.event.addListener(map, "click", function (mouseEvent) {
+    var latlng = mouseEvent.latLng;
+    var latitude = latlng.getLat();
+    var longitude = latlng.getLng();
+
+    // 위도, 경도 값을 입력 폼에 설정
+    document.getElementById("latitude").value = latitude;
+    document.getElementById("longitude").value = longitude;
+
+    var imageSrc = "/static/images/road.png";
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(26, 32);
+
+    // 마커 이미지를 생성합니다
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+    // 마커 추가
+    marker = new kakao.maps.Marker({
+      position: latlng,
+      image: markerImage,
+    });
+    console.log(latitude);
+    console.log(longitude);
+    marker.setMap(map);
+  });
+</script>

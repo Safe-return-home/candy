@@ -1,51 +1,74 @@
 {% extends 'base.html' %} {% block content %}
+<form id="statusForm" method="POST">
+  {% csrf_token %}
+  <nav class="nav">
+    <input type="hidden" id="statusInput" name="status" value="" />
+    <a
+      href="#"
+      class="nav-item is-active"
+      active-color="#7f50ff"
+      onclick="submitStatus(0); return false;"
+      >Police</a
+    >
+    <a
+      href="#"
+      class="nav-item"
+      active-color="#ffbd3d"
+      onclick="submitStatus(1); return false;"
+      >Road</a
+    >
+    <span class="nav-indicator"></span>
+  </nav>
+</form>
+<form class="search_bar" onsubmit="searchPlaces(); return false;">
+  <input
+    type="text"
+    placeholder="확인하고 싶은 지역을 입력하세요."
+    id="region"
+    size="15"
+    value=""
+  /><button id="submit_btn" type="submit">
+    <img src="/static/images/search.svg" />
+  </button>
+</form>
+<div
+  id="map"
+  style="width: 300px; height: 350px; margin: 20px auto; border-radius: 10px"
+></div>
+{% if status == 0 %}
+<div>{% include 'marker/police.html' %}</div>
+{% else %}
+<div>{% include 'marker/road.html' %}</div>
+{% endif %}
+<script>
+  function submitStatus(status) {
+    var statusInput = document.getElementById("statusInput");
+    statusInput.value = status;
+    document.getElementById("statusForm").submit();
+  }
 
-<div>
-  <div id="map" style="width: 300px; height: 400px; margin: 0 auto"></div>
-  <!--POST로 뷰에 위도, 경도 정보 보냄-->
-  <form action="{% url 'marker:markers' %}" method="post">
-    {% csrf_token %}
-    <input type="hidden" name="latitude" id="latitude" />
-    <input type="hidden" name="longitude" id="longitude" />
-    <button type="submit">주변 상황 보기</button>
-  </form>
-  <!--받아온 정보가 있다면 출력-->
-  {% for marker in markers %}
-  <div>
-    <div>안전캔디: {{ marker.rating }}</div>
-    <div>유동인구: {{ marker.population }}</div>
-    <div>가로등: {{ marker.street_lamp }}</div>
-    <div>작성일: {{ marker.regTime }}</div>
-    <a href="{% url 'marker:marker_detail' pk=marker.pk %}">상세보기</a>
-  </div>
-  {% endfor %}
+  const indicator = document.querySelector(".nav-indicator");
+  const items = document.querySelectorAll(".nav-item");
 
-  <script>
-    var options = {
-      center: new kakao.maps.LatLng(33.450701, 126.570667),
-      level: 2,
-    };
-
-    var map = new kakao.maps.Map(document.getElementById("map"), options);
-    var marker;
-
-    kakao.maps.event.addListener(map, "click", function (mouseEvent) {
-      var latlng = mouseEvent.latLng;
-      var latitude = latlng.getLat();
-      var longitude = latlng.getLng();
-
-      // 위도, 경도 값을 입력 폼에 설정
-      document.getElementById("latitude").value = latitude;
-      document.getElementById("longitude").value = longitude;
-
-      // 마커 추가
-      marker = new kakao.maps.Marker({
-        position: latlng,
-      });
-      console.log(latitude);
-      console.log(longitude);
-      marker.setMap(map);
+  function handleIndicator(el) {
+    items.forEach((item) => {
+      item.classList.remove("is-active");
+      item.removeAttribute("style");
     });
-  </script>
-</div>
+
+    indicator.style.width = `${el.offsetWidth}px`;
+    indicator.style.left = `${el.offsetLeft}px`;
+    indicator.style.backgroundColor = el.getAttribute("active-color");
+
+    el.classList.add("is-active");
+    el.style.color = el.getAttribute("active-color");
+  }
+
+  items.forEach((item, index) => {
+    item.addEventListener("click", (e) => {
+      handleIndicator(e.target);
+    });
+    item.classList.contains("is-active") && handleIndicator(item);
+  });
+</script>
 {% endblock %}
