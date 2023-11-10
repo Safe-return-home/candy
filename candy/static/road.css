@@ -19,6 +19,10 @@
   font-weight: 700;
   line-height: normal;
 }
+#address {
+  display: block;
+  color: #aaa;
+}
 .preview {
   box-sizing: border-box;
   width: 300px;
