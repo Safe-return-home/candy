@@ -3,8 +3,20 @@
 <form action="{% url 'marker:marker_edit' %}" method="post">
   {% csrf_token %}
   <h2>주소</h2>
+  <input type="text" name="latitude" id="latitude" value="{{data.lat}}" style="display:none" required />
+  <input type="text" name="longitude" id="longitude" value="{{data.lng}}" style="display:none" required />
+  <p id="address_print"></p>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var lat = urlParams.get('lat');
+    var lng = urlParams.get('lng');
+    var address = urlParams.get('address');
+    document.getElementById("latitude").value = lat;
+    document.getElementById("longitude").value = lng;
+    document.getElementById("address_print").innerText = address;
+  </script>
   <h2>가로등 수</h2>
-  <input type="text" name="street_lamp" id="street_lamp" />
+  <input type="text" name="street_lamp" id="street_lamp" required/>
     <button class="my-button" id="bad" onclick="changeButtonColor_bad()">
       별로예요
     </button>
@@ -16,7 +28,7 @@
     </button>
 
   <h2>유동 인구 수</h2>
-  <input type="text" name="population" id="population" />
+  <input type="text" name="population" id="population" required/>
     <button class="my-button" id="bad1" onclick="changeButtonColor_bad1()">
       별로예요
     </button>
@@ -30,7 +42,7 @@
   </div>
   <h2>안전 캔디</h2>
   <div>
-    <input type="number" name="rating" id="candy" />
+    <input type="number" name="rating" id="candy" required />
     <img
       class="myImage"
       type="image"
@@ -191,19 +203,19 @@
                     }
   </script>
 
-  <input
-    type="text"
-    name="latitude"
-    id="latitude"
-    value="33.45078616991599"
-    style="display: none"
-  />
-  <input
-    type="text"
-    name="longitude"
-    id="longitude"
-    value="126.57059088071355"
-    style="display: none"
-  />
+<!--  <input-->
+<!--    type="text"-->
+<!--    name="latitude"-->
+<!--    id="latitude"-->
+<!--    value="33.45078616991599"-->
+<!--    style="display: none"-->
+<!--  />-->
+<!--  <input-->
+<!--    type="text"-->
+<!--    name="longitude"-->
+<!--    id="longitude"-->
+<!--    value="126.57059088071355"-->
+<!--    style="display: none"-->
+<!--  />-->
 </form>
 {% endblock %}

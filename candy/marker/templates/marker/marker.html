@@ -1,11 +1,12 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% if status == 0 %}
 <form id="statusForm" method="POST">
   {% csrf_token %}
   <nav class="nav">
-    <input type="hidden" id="statusInput" name="status" value="" />
+    <input type="hidden" id="statusInput" name="status" value="1" />
     <a
       href="#"
       class="nav-item is-active"
+      id="PoliceTab"
       active-color="#7f50ff"
       onclick="submitStatus(0); return false;"
       >Police</a
@@ -13,6 +14,7 @@
     <a
       href="#"
       class="nav-item"
+      id="RoadTab"
       active-color="#ffbd3d"
       onclick="submitStatus(1); return false;"
       >Road</a
@@ -20,6 +22,32 @@
     <span class="nav-indicator"></span>
   </nav>
 </form>
+{% else %}
+<form id="statusForm" method="POST">
+  {% csrf_token %}
+  <nav class="nav">
+    <input type="hidden" id="statusInput" name="status" value="0" />
+    <a
+      href="#"
+      class="nav-item"
+      id="PoliceTab"
+      active-color="#7f50ff"
+      onclick="submitStatus(0); return false;"
+      >Police</a
+    >
+    <a
+      href="#"
+      class="nav-item is-active"
+      id="RoadTab"
+      active-color="#ffbd3d"
+      onclick="submitStatus(1); return false;"
+      >Road</a
+    >
+    <span class="nav-indicator"></span>
+  </nav>
+</form>
+{% endif %}
+
 <form class="search_bar" onsubmit="searchPlaces(); return false;">
   <input
     type="text"

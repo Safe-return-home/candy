@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상세페이지</title>
+    <link rel="stylesheet" href="/yeogithon/candy/static/page.css" />
+  </head>
+  <body>
+    <div id="top">
+      <div id="title">골목길 조회하기</div>
+      <div id="icon">
+        <img src="../static/images/심볼.png" />
+      </div>
+      <div id="list">
+        <img src="../static/images/Group 1.png" />
+      </div>
+    </div>
+    <button id="plus">수정</button>
+    <button id="minus">삭제</button>
+    <div id="address">주소</div>
+    <input type="address-text" />
+
+    <div id="light" style="font-weight: bolder">가로등 수</div>
+    <div style="list-style: none; margin-top: 7px">
+      <li>
+        <label for="Q1_1"
+          ><input
+            type="radio"
+            name="Q1"
+            id="Q1_1"
+            value="별로예요"
+          />별로예요</label
+        >
+      </li>
+      <li>
+        <label for="Q1_2"
+          ><input
+            type="radio"
+            name="Q1"
+            id="Q1_2"
+            value="적당해요"
+          />적당해요</label
+        >
+      </li>
+      <li>
+        <label for="Q1_3"
+          ><input
+            type="radio"
+            name="Q1"
+            id="Q1_3"
+            value="만족해요"
+          />만족해요</label
+        >
+      </li>
+    </div>
+
+    <div id="people" style="font-weight: bolder">유동 인구 수</div>
+    <div style="list-style: none; margin-top: 7px">
+      <li>
+        <label for="Q2_1"
+          ><input
+            type="radio"
+            name="Q2"
+            id="Q2_1"
+            value="별로예요"
+          />별로예요</label
+        >
+      </li>
+      <li>
+        <label for="Q2_2"
+          ><input
+            type="radio"
+            name="Q2"
+            id="Q2_2"
+            value="적당해요"
+          />적당해요</label
+        >
+      </li>
+      <li>
+        <label for="Q2_3"
+          ><input
+            type="radio"
+            name="Q2"
+            id="Q2_3"
+            value="만족해요"
+          />만족해요</label
+        >
+      </li>
+    </div>
+
+    <div id="safe-candy">
+      <form class="mb-3" name="myform" id="myform" method="post">
+        <fieldset>
+          <div class="text-bold">안전 캔디</div>
+          <button
+            onclick="toggleImg()"
+            type="checkbox"
+            name="reviewStar"
+            value="5"
+            id="rate1"
+          /><label for="rate1">
+            <img src="../static/images/안전캔디_컬러.png" />
+            <script>
+              function toggleImg() {
+                document.getElementById("img").src =
+                  "../static/images/안전캔디_그레이.png";
+              }
+            </script>
+          </label>
+          <input type="checkbox" name="reviewStar" value="4" id="rate2" /><label
+            for="rate2"
+            ><img src="../static/images/안전캔디_컬러.png"
+          /></label>
+          <input type="checkbox" name="reviewStar" value="3" id="rate3" /><label
+            for="rate3"
+            ><img src="../static/images/안전캔디_컬러.png"
+          /></label>
+          <input type="checkbox" name="reviewStar" value="2" id="rate4" /><label
+            for="rate4"
+            ><img src="../static/images/안전캔디_컬러.png"
+          /></label>
+          <input type="checkbox" name="reviewStar" value="1" id="rate5" /><label
+            for="rate5"
+            ><img src="../static/images/안전캔디_컬러.png"
+          /></label>
+        </fieldset>
+      </form>
+    </div>
+
+    <div id="review">자세한 리뷰</div>
+    <input id="review-box" />
+    <button id="review-icon">저장</button>
+    <script src="./date.js"></script>
+    <span id="date"></span>
+    <div id="text-name">익명</div>
+    <div id="text">아직도 가로등이 깜빡거릴까요?</div>
+    <button id="plusplus">수정</button>
+    <button id="minusminus">삭제</button>
+
+    <form id="form">
+      <div>
+        <input
+          type="text"
+          name="comment"
+          id="commAddBox"
+          placeholder="댓글을 입력해주세요"
+        />
+      </div>
+      <button id="commAddBtn">작성</button>
+    </form>
+    <div id="footer">
+      <div id="footer-text">
+        안전히 가세요, 여러분!
+        <br />
+        HERETHON 15
+      </div>
+      <div id="footer-name">
+        <br />
+        디자인 김채현
+        <br />
+        Front-end 김채현 김소영 박상아
+        <br />
+        Back-end 양수빈 이지원
+      </div>
+    </div>
+  </body>
+</html>

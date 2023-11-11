@@ -1,0 +1,1046 @@
+.bar {
+  /* 상단바 */
+
+  position: absolute;
+  width: 375px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+
+  background: #ffffff;
+}
+
+.title {
+  /* 대처 요령 */
+
+  position: absolute;
+  width: 189px;
+  height: 31px;
+  left: 93px;
+  top: 30px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+  text-align: center;
+
+  color: #000000;
+}
+
+.icon {
+  /* 심볼 */
+
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  left: 23px;
+  top: 28px;
+}
+
+.list {
+  /* Group 1 */
+
+  position: absolute;
+  width: 24px;
+  height: 17px;
+  left: 330px;
+  top: 37px;
+}
+
+.time-tap {
+  /* Rectangle 1693 */
+
+  position: absolute;
+  left: 7.47%;
+  right: 68.53%;
+  top: 13.79%;
+  bottom: 81.9%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+}
+
+.time-text {
+  /* 최신순 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 44px;
+  top: 121px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+  text-align: center;
+
+  color: #000000;
+}
+
+.name-tap {
+  /* Rectangle 1694 */
+
+  position: absolute;
+  left: 33.87%;
+  right: 42.13%;
+  top: 13.79%;
+  bottom: 81.9%;
+
+  background: #d3c3f7;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+}
+
+.name-text {
+  /* 이름순 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 143px;
+  top: 121px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.list-one {
+  /* Rectangle 29 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 7.47%;
+  right: 7.2%;
+  top: 20.81%;
+  bottom: 73.03%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  /* Neutral/300 */
+  border: 1px solid #eff0f7;
+  box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+  border-radius: 10px;
+}
+
+.text-one {
+  /* 대중교통 내 성범죄 대처요령 */
+
+  position: absolute;
+  width: 263px;
+  height: 19px;
+  left: 56px;
+  top: 183px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.one {
+  /* down_line */
+
+  position: absolute;
+  left: 50%;
+  right: 8.33%;
+  top: 68.39%;
+  bottom: -10.06%;
+
+  /* Grey/01 */
+  background: #09244b;
+  transform: rotate(-135deg);
+}
+
+.list-two {
+  /* Rectangle 30 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 7.47%;
+  right: 7.2%;
+  top: 29.68%;
+  bottom: 64.16%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  /* Neutral/300 */
+  border: 1px solid #eff0f7;
+  box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+  border-radius: 10px;
+}
+
+.text-two {
+  /* 스토킹 대처요령 */
+
+  position: absolute;
+  width: 263px;
+  height: 19px;
+  left: 56px;
+  top: 255px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.two {
+  /* down_line */
+
+  position: absolute;
+  left: 50%;
+  right: 8.33%;
+  top: 68.39%;
+  bottom: -10.06%;
+
+  /* Grey/01 */
+  background: #09244b;
+  transform: rotate(-135deg);
+}
+
+.list-three {
+  /* Rectangle 31 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 7.47%;
+  right: 7.2%;
+  top: 38.55%;
+  bottom: 55.3%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  /* Neutral/300 */
+  border: 1px solid #eff0f7;
+  box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+  border-radius: 10px;
+}
+
+.text-three {
+  /* 스토킹 가해 신고 후 추가 보호 */
+
+  position: absolute;
+  width: 263px;
+  height: 19px;
+  left: 56px;
+  top: 327px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.three {
+  /* down_line */
+
+  position: absolute;
+  left: 50%;
+  right: 8.33%;
+  top: 68.39%;
+  bottom: -10.06%;
+
+  /* Grey/01 */
+  background: #09244b;
+  transform: rotate(-135deg);
+}
+
+.list-four {
+  /* Rectangle 32 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 7.47%;
+  right: 7.2%;
+  top: 47.41%;
+  bottom: 46.43%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  /* Neutral/300 */
+  border: 1px solid #eff0f7;
+  box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+  border-radius: 10px;
+}
+
+.text-four {
+  /* 스토킹 피해자 지원 제도 */
+
+  position: absolute;
+  width: 263px;
+  height: 19px;
+  left: 56px;
+  top: 399px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.four {
+  /* arrow/down_line */
+
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 306px;
+  top: 398px;
+
+  /* down_line */
+
+  position: absolute;
+  left: 50%;
+  right: 8.33%;
+  top: 68.39%;
+  bottom: -10.06%;
+
+  /* Grey/01 */
+  background: #09244b;
+  transform: rotate(-135deg);
+}
+
+.list-five {
+  /* Rectangle 33 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 7.47%;
+  right: 7.2%;
+  top: 56.28%;
+  bottom: 37.56%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  /* Neutral/300 */
+  border: 1px solid #eff0f7;
+  box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+  border-radius: 10px;
+}
+
+.text-five {
+  /* 불법 촬영 등에 대한 처벌 */
+
+  position: absolute;
+  width: 263px;
+  height: 19px;
+  left: 56px;
+  top: 471px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.five {
+  /* down_line */
+
+  position: absolute;
+  left: 50%;
+  right: 8.33%;
+  top: 68.39%;
+  bottom: -10.06%;
+
+  /* Grey/01 */
+  background: #09244b;
+  transform: rotate(-135deg);
+}
+
+.page-one {
+  /* 1 ㅣ 2 */
+
+  position: absolute;
+  width: 183px;
+  height: 48px;
+  left: 96px;
+  top: 546px;
+
+  font-family: "Noto Sans Symbols";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 33px;
+  text-align: center;
+
+  color: #5530e9;
+}
+
+.page-two {
+  /* 1 ㅣ 2 */
+
+  position: absolute;
+  width: 183px;
+  height: 48px;
+  left: 96px;
+  top: 546px;
+
+  font-family: "Noto Sans Symbols";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 33px;
+  text-align: center;
+
+  color: #5530e9;
+}
+
+.footer {
+  /* 푸터 */
+
+  position: absolute;
+  width: 375px;
+  height: 227px;
+  left: -1px;
+  top: 585px;
+
+  /* 디자인 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 28px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 양수빈 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 이지원 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김소영 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 박상아 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 207px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 프론트 */
+
+  position: absolute;
+  width: 62px;
+  height: 19px;
+  left: 28px;
+  top: 139px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* Back-end */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 28px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* HERETHON 15 */
+
+  position: absolute;
+  width: 189px;
+  height: 31px;
+  left: 24px;
+  top: 57px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* 안전히 가세요, 여러분! */
+
+  position: absolute;
+  width: 253px;
+  height: 31px;
+  left: 24px;
+  top: 25px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* Copyright */
+
+  position: absolute;
+  width: 126px;
+  height: 20px;
+  left: 28px;
+  top: 200px;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 20px;
+  /* identical to box height, or 400% */
+
+  /* Neutral/600 */
+  color: #6f6c90;
+}
+
+.footer-text {
+  /* 푸터 */
+
+  position: absolute;
+  width: 375px;
+  height: 227px;
+  left: -1px;
+  top: 585px;
+
+  /* 디자인 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 28px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 양수빈 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 이지원 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김소영 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 박상아 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 207px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 프론트 */
+
+  position: absolute;
+  width: 62px;
+  height: 19px;
+  left: 28px;
+  top: 139px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* Back-end */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 28px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* HERETHON 15 */
+
+  position: absolute;
+  width: 189px;
+  height: 31px;
+  left: 24px;
+  top: 57px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* 안전히 가세요, 여러분! */
+
+  position: absolute;
+  width: 253px;
+  height: 31px;
+  left: 24px;
+  top: 25px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* Copyright */
+
+  position: absolute;
+  width: 126px;
+  height: 20px;
+  left: 28px;
+  top: 200px;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 20px;
+  /* identical to box height, or 400% */
+
+  /* Neutral/600 */
+  color: #6f6c90;
+}
+
+.footer-name {
+  /* 푸터 */
+
+  position: absolute;
+  width: 375px;
+  height: 227px;
+  left: -1px;
+  top: 585px;
+
+  /* 디자인 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 28px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 양수빈 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 이지원 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김소영 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 박상아 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 207px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 프론트 */
+
+  position: absolute;
+  width: 62px;
+  height: 19px;
+  left: 28px;
+  top: 139px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* Back-end */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 28px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* HERETHON 15 */
+
+  position: absolute;
+  width: 189px;
+  height: 31px;
+  left: 24px;
+  top: 57px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* 안전히 가세요, 여러분! */
+
+  position: absolute;
+  width: 253px;
+  height: 31px;
+  left: 24px;
+  top: 25px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* Copyright */
+
+  position: absolute;
+  width: 126px;
+  height: 20px;
+  left: 28px;
+  top: 200px;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 20px;
+  /* identical to box height, or 400% */
+
+  /* Neutral/600 */
+  color: #6f6c90;
+}

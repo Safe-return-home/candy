@@ -9,3 +9,5 @@ ENV/
 myvenv/
 env.bak/
 venv.bak/
+.idea/
+.vscode/

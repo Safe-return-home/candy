@@ -1,0 +1,994 @@
+/* 상단바 */
+.top {
+  position: absolute;
+  width: 375px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+
+  background: #ffffff;
+}
+
+.title {
+  /* 골목길 조회하기 */
+
+  position: absolute;
+  width: 189px;
+  height: 31px;
+  left: 93px;
+  top: 30px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+  text-align: center;
+
+  color: #000000;
+}
+
+.icon {
+  /* 심볼 */
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  left: 23px;
+  top: 28px;
+}
+
+.list {
+  /* Group 1 */
+
+  position: absolute;
+  width: 24px;
+  height: 17px;
+  left: 330px;
+  top: 37px;
+}
+
+.plus {
+  /* 수정 */
+
+  position: absolute;
+  width: 19px;
+  height: 14px;
+  left: 278px;
+  top: 715px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #aaaaaa;
+}
+
+.minus {
+  /* 삭제 */
+
+  position: absolute;
+  width: 22px;
+  height: 14px;
+  left: 301px;
+  top: 715px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #aaaaaa;
+}
+
+.address {
+  /* 주소 */
+
+  position: absolute;
+  width: 42px;
+  height: 19px;
+  left: 43px;
+  top: 119px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #000000;
+}
+
+.address-text {
+  /* 어쩌구 저쩌구@@@@ */
+
+  position: absolute;
+  width: 151px;
+  height: 19px;
+  left: 43px;
+  top: 150px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #aaaaaa;
+}
+
+.light {
+  /* 가로등 수 */
+
+  position: absolute;
+  width: 90px;
+  height: 19px;
+  left: 43px;
+  top: 193px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #000000;
+}
+
+.Q1_1 {
+  /* Group 11 */
+
+  position: absolute;
+  width: 90px;
+  height: 35px;
+  left: 43px;
+  top: 226px;
+
+  /* Rectangle 1693 */
+
+  position: absolute;
+  left: 11.47%;
+  right: 64.53%;
+  top: 22.2%;
+  bottom: 74.36%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+
+  /* 별로예요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 62px;
+  top: 235px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.Q1_2 {
+  /* Group 13 */
+
+  position: absolute;
+  width: 90px;
+  height: 35px;
+  left: 141px;
+  top: 226px;
+
+  /* Rectangle 1694 */
+
+  position: absolute;
+  left: 37.6%;
+  right: 38.4%;
+  top: 22.2%;
+  bottom: 74.36%;
+
+  background: #d3c3f7;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+
+  /* 적당해요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 161px;
+  top: 235px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
+
+.Q1_3 {
+  /* Group 14 */
+
+  position: absolute;
+  width: 90px;
+  height: 35px;
+  left: 243px;
+  top: 226px;
+
+  /* Rectangle 1695 */
+
+  position: absolute;
+  left: 64.8%;
+  right: 11.2%;
+  top: 22.2%;
+  bottom: 74.36%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+
+  /* 만족해요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 262px;
+  top: 235px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.people {
+  /* 유동 인구 수 */
+
+  position: absolute;
+  width: 107px;
+  height: 19px;
+  left: 43px;
+  top: 285px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #000000;
+}
+
+.Q2_1 {
+  /* Group 15 */
+
+  position: absolute;
+  width: 90px;
+  height: 35px;
+  left: 43px;
+  top: 318px;
+
+  /* Rectangle 1693 */
+
+  position: absolute;
+  left: 11.47%;
+  right: 64.53%;
+  top: 31.24%;
+  bottom: 65.32%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+
+  /* 별로예요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 62px;
+  top: 327px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.Q2_2 {
+  /* Group 16 */
+
+  position: absolute;
+  width: 90px;
+  height: 35px;
+  left: 141px;
+  top: 318px;
+
+  /* Rectangle 1694 */
+
+  position: absolute;
+  left: 37.6%;
+  right: 38.4%;
+  top: 31.24%;
+  bottom: 65.32%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+
+  /* 적당해요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 161px;
+  top: 327px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.Q2_3 {
+  /* Group 17 */
+
+  position: absolute;
+  width: 90px;
+  height: 35px;
+  left: 243px;
+  top: 318px;
+
+  /* Rectangle 1695 */
+
+  position: absolute;
+  left: 64.8%;
+  right: 11.2%;
+  top: 31.24%;
+  bottom: 65.32%;
+
+  background: #d3c3f7;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+
+  /* 만족해요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 262px;
+  top: 327px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
+
+.safe-candy {
+  /* 안전 캔디 */
+
+  position: absolute;
+  width: 107px;
+  height: 19px;
+  left: 43px;
+  top: 376px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #000000;
+}
+
+.review {
+  /* 자세한 리뷰 */
+
+  position: absolute;
+  width: 107px;
+  height: 19px;
+  left: 43px;
+  top: 491px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #000000;
+}
+
+.review-box {
+  /* Rectangle 28 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 11.47%;
+  right: 11.2%;
+  top: 51.28%;
+  bottom: 36.05%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  /* Neutral/300 */
+  border: 1px solid #eff0f7;
+  box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+  border-radius: 10px;
+}
+
+.review-icon {
+  /* Rectangle 31 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 70.93%;
+  right: 10.4%;
+  top: 75.25%;
+  bottom: 19.84%;
+
+  /* 퍼플_메인컬러 */
+  background: #7f50ff;
+  border: 1px solid #f3eff7;
+  box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+  border-radius: 60px;
+}
+
+.text-name {
+  /* 익명 아직도 가로등이 깜빡거릴까요? */
+
+  position: absolute;
+  width: 231px;
+  height: 36px;
+  left: 43px;
+  top: 715px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #977dff;
+}
+
+.text {
+  /* 익명 아직도 가로등이 깜빡거릴까요? */
+
+  position: absolute;
+  width: 231px;
+  height: 36px;
+  left: 43px;
+  top: 715px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #977dff;
+}
+
+.plusplus {
+  /* 수정 */
+  position: absolute;
+  width: 19px;
+  height: 14px;
+  left: 278px;
+  top: 715px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #aaaaaa;
+}
+
+.minusminus {
+  /* 삭제 */
+
+  position: absolute;
+  width: 22px;
+  height: 14px;
+  left: 301px;
+  top: 715px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #aaaaaa;
+}
+
+.commAddBox {
+  /* Rectangle 30 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 8.27%;
+  right: 30.93%;
+  top: 75.44%;
+  bottom: 19.65%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  /* Neutral/300 */
+  border: 1px solid #eff0f7;
+  border-radius: 60px;
+}
+
+.commAddBtn {
+  /* Rectangle 31 */
+
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 70.93%;
+  right: 10.4%;
+  top: 75.25%;
+  bottom: 19.84%;
+
+  /* 퍼플_메인컬러 */
+  background: #7f50ff;
+  border: 1px solid #f3eff7;
+  box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+  border-radius: 60px;
+}
+
+.footer-text {
+  /* 푸터 */
+
+  position: absolute;
+  width: 375px;
+  height: 227px;
+  left: 0px;
+  top: 818px;
+
+  /* 디자인 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 28px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 양수빈 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 이지원 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김소영 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 박상아 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 207px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 프론트 */
+
+  position: absolute;
+  width: 62px;
+  height: 19px;
+  left: 28px;
+  top: 139px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* Back-end */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 28px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* HERETHON 15 */
+
+  position: absolute;
+  width: 189px;
+  height: 31px;
+  left: 24px;
+  top: 57px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* 안전히 가세요, 여러분! */
+
+  position: absolute;
+  width: 253px;
+  height: 31px;
+  left: 24px;
+  top: 25px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* Copyright */
+
+  position: absolute;
+  width: 126px;
+  height: 20px;
+  left: 28px;
+  top: 200px;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 20px;
+  /* identical to box height, or 400% */
+
+  /* Neutral/600 */
+  color: #6f6c90;
+}
+
+.footer-name {
+  /* 푸터 */
+
+  position: absolute;
+  width: 375px;
+  height: 227px;
+  left: 0px;
+  top: 818px;
+
+  /* 디자인 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 28px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 104px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김채현 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 양수빈 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 109px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 이지원 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 김소영 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 158px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 박상아 */
+
+  position: absolute;
+  width: 39px;
+  height: 19px;
+  left: 207px;
+  top: 141px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* 프론트 */
+
+  position: absolute;
+  width: 62px;
+  height: 19px;
+  left: 28px;
+  top: 139px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* Back-end */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 28px;
+  top: 176px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+
+  /* HERETHON 15 */
+
+  position: absolute;
+  width: 189px;
+  height: 31px;
+  left: 24px;
+  top: 57px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* 안전히 가세요, 여러분! */
+
+  position: absolute;
+  width: 253px;
+  height: 31px;
+  left: 24px;
+  top: 25px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* Copyright */
+
+  position: absolute;
+  width: 126px;
+  height: 20px;
+  left: 28px;
+  top: 200px;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 20px;
+  /* identical to box height, or 400% */
+
+  /* Neutral/600 */
+  color: #6f6c90;
+}

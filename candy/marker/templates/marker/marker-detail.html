@@ -1,25 +1,26 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+{% if request.user.pk == marker.user.pk %}
 <a href="{% url 'marker:detail_delete' marker.id %}">삭제</a>
 <a href="{% url 'marker:detail_update_page' marker.id %}">수정</a>
+{% endif %}
 <div>주소: {{ marker.address }}</div>
 <div>가로등 수: {{ marker.street_lamp }}</div>
 <div>유동인구 수: {{ marker.population }}</div>
 <div>안전캔디: {{ marker.rating }}</div>
 <div>자세한리뷰: {{ marker.body }}</div>
-<div>작성일: {{ marker.regTime }}</div>
+<div>작성일: {{ marker.regTime | date:"Y.m.d" }}</div>
 
 {% for comment in comments%}
-<br>
+<br />
 <div>이름: {{ comment.user.userName }}</div>
 <div>내용: {{ comment.body }}</div>
 <div>작성일: {{ comment.regTime }}</div>
 {% endfor %}
 
 <form action="{% url 'marker:marker_detail' pk=marker.pk %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="body" id="body">
-    <button type="submit">댓글쓰기</button>
+  {% csrf_token %}
+  <input type="text" name="body" id="body" />
+  <button type="submit">댓글쓰기</button>
 </form>
 
 {% endblock %}
