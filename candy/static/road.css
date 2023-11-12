@@ -88,3 +88,9 @@ a {
   font-weight: 700;
   line-height: normal;
 }
+.roadbox .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
