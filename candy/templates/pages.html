@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상세페이지</title>
+    <link rel="stylesheet" href="/yeogithon/candy/static/page.css" />
+  </head>
+  <body style="background-color: #aaaaaa">
+    <style>
+      #container {
+        position: relative;
+        width: 375px;
+        height: 1018px;
+        background: #ffffff;
+        margin: 0 auto;
+      }
+
+      #top {
+        position: absolute;
+        width: 375px;
+        height: 90px;
+        left: 0px;
+        top: 0px;
+
+        background: #ffffff;
+      }
+
+      #title {
+        /* 골목길 조회하기 */
+
+        position: absolute;
+        width: 189px;
+        height: 31px;
+        left: 93px;
+        top: 30px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        /* identical to box height */
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #icon {
+        /* 심볼 */
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        left: 23px;
+        top: 28px;
+      }
+
+      #list {
+        /* Group 1 */
+
+        position: absolute;
+        width: 24px;
+        height: 17px;
+        left: 330px;
+        top: 37px;
+      }
+
+      #address {
+        /* 주소 */
+
+        position: absolute;
+        width: 42px;
+        height: 19px;
+        left: 43px;
+        top: 119px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #000000;
+      }
+
+      #address-text {
+        /* 어쩌구 저쩌구@@@@ */
+
+        position: absolute;
+        width: 151px;
+        height: 19px;
+        left: 43px;
+        top: 150px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        /* identical to box height */
+
+        color: #aaaaaa;
+      }
+
+      #light {
+        /* 가로등 수 */
+
+        position: absolute;
+        width: 90px;
+        height: 19px;
+        left: 43px;
+        top: 193px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #000000;
+      }
+
+      [value="bad"] {
+        vertical-align: middle;
+        appearance: none;
+
+        position: absolute;
+        left: 11.47%;
+        right: 64.53%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="bad"]:checked {
+        background-color: #d3c3f7;
+      }
+
+      [value="soso"] {
+        vertical-align: middle;
+        appearance: none;
+
+        border-radius: 50%;
+        position: absolute;
+        left: 37.6%;
+        right: 38.4%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="soso"]:checked {
+        background-color: #d3c3f7;
+      }
+
+      [value="good"] {
+        vertical-align: middle;
+        appearance: none;
+
+        position: absolute;
+        left: 64.8%;
+        right: 11.2%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="good"]:checked {
+        background-color: #d3c3f7;
+      }
+
+      #people {
+        /* 유동 인구 수 */
+
+        position: absolute;
+        width: 107px;
+        height: 19px;
+        left: 43px;
+        top: 285px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #000000;
+      }
+
+      [value="p-bad"] {
+        vertical-align: middle;
+        appearance: none;
+
+        position: absolute;
+        left: 11.47%;
+        right: 64.53%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="p-bad"]:checked {
+        background-color: #d3c3f7;
+      }
+
+      [value="p-soso"] {
+        vertical-align: middle;
+        appearance: none;
+
+        border-radius: 50%;
+        position: absolute;
+        left: 37.6%;
+        right: 38.4%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="p-soso"]:checked {
+        background-color: #d3c3f7;
+      }
+
+      [value="p-good"] {
+        vertical-align: middle;
+        appearance: none;
+
+        position: absolute;
+        left: 64.8%;
+        right: 11.2%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="p-good"]:checked {
+        background-color: #d3c3f7;
+      }
+
+      #safe-candy {
+        /* 안전 캔디 */
+
+        position: absolute;
+        width: 400px;
+        height: 19px;
+        left: 10px;
+        top: 376px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #000000;
+      }
+
+      #review {
+        /* 자세한 리뷰 */
+
+        position: relative;
+        width: 107px;
+        height: 19px;
+        left: 43px;
+        bottom: 230px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #000000;
+      }
+
+      #review-box {
+        /* Rectangle 28 */
+
+        box-sizing: border-box;
+
+        position: absolute;
+        left: 11.47%;
+        right: 11.2%;
+        top: 51.28%;
+        bottom: 36.05%;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        /* Neutral/300 */
+        border: 1px solid #eff0f7;
+        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+        border-radius: 10px;
+      }
+
+      #review-text {
+        /* 너무 늦은 밤에는 무서울 것 같기는 하지만 나름 괜찮은 것 같아요요가로등이 깜빡거려요... */
+
+        position: relative;
+        width: 300px;
+        height: 19px;
+        left: 10px;
+        top: 12px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: #aaaaaa;
+      }
+
+      #text-name {
+        /* 익명  */
+
+        position: relative;
+        width: 231px;
+        height: 36px;
+        left: 43px;
+        bottom: 80px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+
+        color: #977dff;
+      }
+
+      #text {
+        /* 아직도 가로등이 깜빡거릴까요? */
+
+        position: relative;
+        width: 231px;
+        height: 36px;
+        left: 43px;
+        bottom: 90px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+
+        color: #000000;
+      }
+
+      #plusplus {
+        /* 수정 */
+        position: relative;
+        width: 50px;
+        height: 14px;
+        left: 278px;
+        bottom: 135px;
+        background-color: transparent;
+        border: none;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+
+        color: #aaaaaa;
+      }
+
+      #minusminus {
+        /* 삭제 */
+
+        position: absolute;
+        width: 50px;
+        height: 14px;
+        left: 301px;
+        bottom: 320px;
+        background-color: transparent;
+        border: none;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+
+        color: #aaaaaa;
+      }
+
+      #commAddBox {
+        /* Rectangle 30 */
+
+        position: relative;
+        width: 210px;
+        height: 50px;
+        left: 12%;
+        right: 30.93%;
+        bottom: 120px;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        /* Neutral/300 */
+        border: 1px solid #eff0f7;
+        border-radius: 60px;
+      }
+
+      #commAddBtn {
+        /* Rectangle 31 */
+
+        position: relative;
+        left: 70.93%;
+        right: 10.4%;
+        bottom: 170px;
+        width: 70px;
+        height: 50px;
+
+        /* 퍼플_메인컬러 */
+        background: #7f50ff;
+        border: 1px solid #f3eff7;
+        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+        border-radius: 60px;
+      }
+
+      #comment-box {
+        width: 100%;
+        top: 100px;
+      }
+
+      footer {
+        position: relative;
+        bottom: 100;
+        left: 0;
+        height: 227px;
+        width: 375px;
+        background-color: #ddd;
+      }
+
+      #bye {
+        font-size: 25px;
+        top: 50px;
+      }
+
+      #table {
+        font-size: 15px;
+      }
+
+      #copyright {
+        font-size: 5px;
+      }
+    </style>
+    <div id="container">
+      <div id="top">
+        <div id="title">골목길 조회하기</div>
+        <div id="icon">
+          <img src="../static/images/심볼 (1).png" />
+        </div>
+        <div id="list">
+          <img src="../static/images/Group 1 (1).png" />
+        </div>
+      </div>
+      <div id="address">주소</div>
+      <input type="address-text" />
+
+      <div id="light" style="font-weight: bolder">가로등 수</div>
+      <div style="list-style: none; margin-top: 700px">
+        <label>
+          <input type="radio" name="contact" value="bad" checked />
+          <span
+            style="
+              position: absolute;
+              width: 100px;
+              height: 19px;
+              left: 60px;
+              top: 325px;
+
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 15px;
+              line-height: 18px;
+              /* identical to box height */
+
+              color: #000000;
+            "
+            >별로예요</span
+          >
+        </label>
+
+        <label>
+          <input type="radio" name="contact" value="soso" />
+          <span
+            style="
+              position: absolute;
+              width: 70px;
+              height: 19px;
+              left: 156px;
+              top: 325px;
+
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 15px;
+              line-height: 18px;
+              /* identical to box height */
+
+              color: #0a0a0a;
+            "
+            >적당해요</span
+          >
+        </label>
+
+        <label>
+          <input type="radio" name="contact" value="good" />
+          <span
+            style="
+              /* 만족해요 */
+
+              position: absolute;
+              width: 70px;
+              height: 19px;
+              left: 260px;
+              top: 325px;
+
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 15px;
+              line-height: 18px;
+              /* identical to box height */
+
+              color: #000000;
+            "
+            >만족해요</span
+          >
+        </label>
+
+        <div id="people" style="font-weight: bolder">유동 인구 수</div>
+        <div style="list-style: none; margin-top: 100px">
+          <label>
+            <input type="radio" name="contact" value="p-bad" checked />
+            <span
+              style="
+                position: absolute;
+                width: 100px;
+                height: 19px;
+                left: 60px;
+                top: 235px;
+
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 18px;
+                /* identical to box height */
+
+                color: #000000;
+              "
+              >별로예요</span
+            >
+          </label>
+
+          <label>
+            <input type="radio" name="contact" value="soso" />
+            <span
+              style="
+                position: absolute;
+                width: 70px;
+                height: 19px;
+                left: 158px;
+                top: 235px;
+
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 18px;
+                /* identical to box height */
+
+                color: #0a0a0a;
+              "
+              >적당해요</span
+            >
+          </label>
+
+          <label>
+            <input type="radio" name="contact" value="good" />
+            <span
+              style="
+                /* 만족해요 */
+
+                position: absolute;
+                width: 70px;
+                height: 19px;
+                left: 260px;
+                top: 235px;
+
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 18px;
+                /* identical to box height */
+
+                color: #000000;
+              "
+              >만족해요</span
+            >
+          </label>
+        </div>
+
+        <div id="safe-candy">
+          <form class="mb-3" name="myform" id="myform" method="post">
+            <fieldset>
+              <div class="text-bold">안전 캔디</div>
+              <button
+                onclick="toggleImg()"
+                type="checkbox"
+                name="reviewStar"
+                value="5"
+                id="rate1"
+              /><label for="rate1">
+                <img src="../static/images/안전캔디_컬러 (1).png" />
+                <script>
+                  function toggleImg() {
+                    document.getElementById("img").src =
+                      "../static/images/안전캔디_그레이 (1).png";
+                  }
+                </script>
+              </label>
+              <input
+                type="checkbox"
+                name="reviewStar"
+                value="4"
+                id="rate2"
+              /><label for="rate2"
+                ><img src="../static/images/안전캔디_컬러 (1).png"
+              /></label>
+              <input
+                type="checkbox"
+                name="reviewStar"
+                value="3"
+                id="rate3"
+              /><label for="rate3"
+                ><img src="../static/images/안전캔디_컬러 (1).png"
+              /></label>
+              <input
+                type="checkbox"
+                name="reviewStar"
+                value="2"
+                id="rate4"
+              /><label for="rate4"
+                ><img src="../static/images/안전캔디_컬러 (1).png"
+              /></label>
+              <input
+                type="checkbox"
+                name="reviewStar"
+                value="1"
+                id="rate5"
+              /><label for="rate5"
+                ><img src="../static/images/안전캔디_컬러 (1).png"
+              /></label>
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="review">자세한 리뷰</div>
+        <div id="review-box">
+          <div id="review-text">
+            너무 늦은 밤에는 무서울 것 같기는 하지만 나름 <br />
+            괜찮은 것 같아요 <br />
+            가로등이 깜빡거려요...
+          </div>
+        </div>
+        <script src="./date.js"></script>
+        <span id="date"></span>
+        <div id="comment-box">
+          <div id="text-name">익명</div>
+          <div id="text">아직도 가로등이 깜빡거릴까요?</div>
+          <button id="plusplus">수정</button>
+          <button id="minusminus">삭제</button>
+
+          <form id="form">
+            <div>
+              <input
+                type="text"
+                name="comment"
+                id="commAddBox"
+                placeholder="댓글을 입력해주세요"
+              />
+            </div>
+            <button id="commAddBtn">작성</button>
+          </form>
+        </div>
+        <div class="footer">
+          <br />
+          <a id="bye">
+            안전히 가세요, 여러분! <br />
+            HERETHON 15 <br />
+          </a>
+          <br />
+          <table id="table" style="width: 375px" text-align="left">
+            <tr>
+              <td>디자인</td>
+              <td>김채현</td>
+            </tr>
+            <tr>
+              <td>Front-end</td>
+              <td>김채현 김소영 박상아</td>
+            </tr>
+            <tr>
+              <td>Back-end</td>
+              <td>양수빈 이지원</td>
+            </tr>
+          </table>
+          <br />
+          <a id="copyright"
+            >Copyright © 2022 BRIX Templates | All Rights Reserved</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

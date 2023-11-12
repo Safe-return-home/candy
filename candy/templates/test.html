@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      [value="bad"] {
+        vertical-align: middle;
+        appearance: none;
+
+        position: absolute;
+        left: 11.47%;
+        right: 64.53%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="bad"]:checked {
+        background-color: #d3c3f7;
+      }
+
+      [value="soso"] {
+        vertical-align: middle;
+        appearance: none;
+
+        border-radius: 50%;
+        position: absolute;
+        left: 37.6%;
+        right: 38.4%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        background: ##ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="soso"]:checked {
+        background-color: #d3c3f7;
+      }
+
+      [value="good"] {
+        vertical-align: middle;
+        appearance: none;
+
+        position: absolute;
+        left: 64.8%;
+        right: 11.2%;
+        top: 22.2%;
+        bottom: 74.36%;
+
+        /* Neutral/100 */
+        background: #ffffff;
+        box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+          0px -2px 4px rgba(20, 20, 43, 0.02),
+          0px 10px 24px rgba(20, 20, 43, 0.04);
+        border-radius: 10px;
+      }
+
+      [value="good"]:checked {
+        background-color: #d3c3f7;
+      }
+    </style>
+
+    <label>
+      <input type="radio" name="contact" value="bad" checked />
+      <span
+        style="
+          position: absolute;
+          width: 100px;
+          height: 19px;
+          left: 55px;
+          top: 185px;
+
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 18px;
+          /* identical to box height */
+
+          color: #000000;
+        "
+        >별로예요</span
+      >
+    </label>
+
+    <label>
+      <input type="radio" name="contact" value="soso" />
+      <span
+        style="
+          position: absolute;
+          width: 70px;
+          height: 19px;
+          left: 145px;
+          top: 185px;
+
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 18px;
+          /* identical to box height */
+
+          color: #0a0a0a;
+        "
+        >적당해요</span
+      >
+    </label>
+
+    <label>
+      <input type="radio" name="contact" value="good" />
+      <span
+        style="
+          /* 만족해요 */
+
+          position: absolute;
+          width: 70px;
+          height: 19px;
+          left: 240px;
+          top: 185px;
+
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 18px;
+          /* identical to box height */
+
+          color: #000000;
+        "
+        >만족해요</span
+      >
+    </label>
+  </body>
+</html>
