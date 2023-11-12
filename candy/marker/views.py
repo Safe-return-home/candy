@@ -10,8 +10,8 @@ def marker_view(request):
     if request.method == 'GET':
         return render(request, 'marker/marker.html', {})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
-    if request.method == 'POST':
-        status = int(request.POST.get('status', 1))
+    elif request.method == 'POST':
+        status = int(request.POST.get('status', 0))
         latitude = float(request.POST.get('latitude', 33.450701))
         longitude = float(request.POST.get('longitude', 126.570667))
         filtered_markers = Marker.objects.filter(
@@ -46,15 +46,7 @@ def marker_detail_view(request, pk):
 def marker_edit_view(request):
     # 기본 페이지
     if request.method == 'GET':
-        lat = request.GET.get('lat')
-        lng = request.GET.get('lng')
-        address = request.GET.get('address')
-        data = {
-            'lat' : lat,
-            'lng' : lng,
-            'address' : address,
-        }
-        return render(request, './marker/marker-edit.html', data)
+        return render(request, './marker/marker-edit.html', {})
     # 작성 클릭 시
     if request.method == 'POST':
         user = request.user
@@ -91,10 +83,9 @@ def marker_edit_view(request):
 def marker_police_view(request):
     return render(request, 'marker/police.html')
 
-
 def marker_detail_delete(request, pk):
-    # marker_delete=get_object_or_404(Marker, pk=pk)
-    # marker_delete = Marker.objects.get(pk=pk)
+    #marker_delete=get_object_or_404(Marker, pk=pk)
+    #marker_delete = Marker.objects.get(pk=pk)
     try:
         marker_delete = Marker.objects.get(pk=pk)
         marker_delete.delete()
@@ -111,7 +102,7 @@ def marker_detail_update_page(request, pk):
 
 def marker_detail_update(request,pk):
     marker_update=get_object_or_404(Marker, pk=pk)
-    #marker_update.address = request.POST['address']
+    # marker_update.address = request.POST['address']
     marker_update.street_lamp=request.POST['street_lamp']
     marker_update.population=request.POST['population']
     marker_update.rating=request.POST['rating']

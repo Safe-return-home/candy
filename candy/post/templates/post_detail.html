@@ -1,63 +1,9 @@
-<!--
-{% for post in post.all %}
-<h2>{{post.title}}</h2>
-{{post.upload_time}}
-<br>
-{{post.content}}
-{% endfor %}
-
-<div id="bar">
-      <div id="title">대처 요령</div>
-      <div id="icon">
-        <img src="../static/images/심볼.png" />
-      </div>
-      <div id="list">
-        <img src="../static/images/Group 1.png" />
-      </div>
-    </div>
-    <div id="time-tap">
-      <div id="time-text">최신순</div>
-    </div>
-    <div id="name-tap">
-      <div id="name-text">이름순</div>
-    </div>
-    {% for post in post.all %}
-    <div id="list">{{post.title}}</div>
-    {{post.upload_time}}
-    <br>
-    {{post.content}}
-    <br>
-    <button id="lsit_one">
-        <img src="../static/images/down_line.png" />
-    </button>
-    <br>
-    </div>
-    {% endfor %}
-
-    <div id="page-one">1</div>
-    <div id="page-two">2</div>
-    <div id="footer">
-      <div id="footer-text">
-        안전히 가세요, 여러분!
-        <br />
-        HERETHON 15
-      </div>
-      <div id="footer-name">
-        <br />
-        디자인 김채현
-        <br />
-        Front-end 김채현 김소영 박상아
-        <br />
-        Back-end 양수빈 이지원
-      </div>
-    </div>
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>대처요령</title>
+    <title>Document</title>
   </head>
   <body>
     <style>
@@ -67,6 +13,53 @@
         height: 812px;
         background: #ffffff;
         text-align: center;
+      }
+
+      #text-box {
+        /* Rectangle 7 */
+
+        position: absolute;
+        width: 320px;
+        height: 445px;
+        left: 28px;
+        top: 95px;
+
+        background: #ffffff;
+        box-shadow: inset 0px 8px 25px rgba(13, 10, 44, 0.06);
+        border-radius: 10px;
+      }
+
+      #sub-box {
+        /* Rectangle 7 */
+
+        position: absolute;
+        width: 291.54px;
+        height: 58px;
+        left: 18px;
+        top: 430px;
+
+        background: #ede5ff;
+        border-radius: 10px;
+      }
+
+      #sub-text {
+        /* 2023년 4월 15일 기준으로 작성된 글입니다. */
+
+        position: relative;
+        width: 300px;
+        height: 30px;
+        right: 1.5px;
+        top: 20px;
+
+        font-family: "Noto Sans Symbols";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 141%;
+        /* or 20px */
+        text-align: center;
+
+        color: #000000;
       }
 
       #bar {
@@ -229,7 +222,7 @@
         font-family: "Inter";
         font-style: normal;
         font-weight: 700;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 22px;
         text-align: center;
 
@@ -250,207 +243,6 @@
         transform: rotate(360deg);
       }
 
-      #list-two {
-        /* Rectangle 30 */
-
-        box-sizing: border-box;
-
-        position: relative;
-        left: 2%;
-        top: 200px;
-        width: 320px;
-        height: 50px;
-
-        /* Neutral/100 */
-        background: #ffffff;
-        /* Neutral/300 */
-        border: 1px solid #eff0f7;
-        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
-        border-radius: 10px;
-      }
-
-      #text-two {
-        /* 스토킹 대처요령 */
-
-        position: absolute;
-        width: 263px;
-        height: 19px;
-        left: 8%;
-        top: 15px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 22px;
-        text-align: center;
-
-        color: #000000;
-      }
-
-      #two {
-        /* down_line */
-
-        position: relative;
-        left: 280px;
-        top: 15px;
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-        transform: rotate(360deg);
-      }
-
-      #list-three {
-        /* Rectangle 31 */
-
-        box-sizing: border-box;
-
-        position: relative;
-        left: 2%;
-        top: 220px;
-        width: 320px;
-        height: 50px;
-
-        /* Neutral/100 */
-        background: #ffffff;
-        /* Neutral/300 */
-        border: 1px solid #eff0f7;
-        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
-        border-radius: 10px;
-      }
-
-      #text-three {
-        /* 스토킹 가해 신고 후 추가 보호 */
-
-        position: absolute;
-        width: 263px;
-        height: 19px;
-        left: 8%;
-        top: 15px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 22px;
-        text-align: center;
-
-        color: #000000;
-      }
-
-      #three {
-        /* down_line */
-
-        position: relative;
-        left: 280px;
-        top: 15px;
-
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-        transform: rotate(360deg);
-      }
-
-      #list-four {
-        /* Rectangle 32 */
-
-        box-sizing: border-box;
-
-        position: relative;
-        left: 2%;
-        top: 240px;
-        width: 320px;
-        height: 50px;
-
-        /* Neutral/100 */
-        background: #ffffff;
-        /* Neutral/300 */
-        border: 1px solid #eff0f7;
-        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
-        border-radius: 10px;
-      }
-
-      #text-four {
-        /* 스토킹 피해자 지원 제도 */
-
-        position: absolute;
-        width: 263px;
-        height: 19px;
-        left: 8%;
-        top: 15px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 22px;
-        text-align: center;
-
-        color: #000000;
-      }
-
-      #four {
-        position: relative;
-        left: 280px;
-        top: 18%;
-
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-        transform: rotate(360deg);
-      }
-
-      #list-five {
-        /* Rectangle 33 */
-
-        box-sizing: border-box;
-
-        position: relative;
-        left: 2%;
-        top: 260px;
-        width: 320px;
-        height: 50px;
-
-        /* Neutral/100 */
-        background: #ffffff;
-        /* Neutral/300 */
-        border: 1px solid #eff0f7;
-        box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
-        border-radius: 10px;
-      }
-
-      #text-five {
-        /* 불법 촬영 등에 대한 처벌 */
-
-        position: absolute;
-        width: 263px;
-        height: 19px;
-        left: 8%;
-        top: 15px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 22px;
-        text-align: center;
-
-        color: #000000;
-      }
-
-      #five {
-        /* down_line */
-
-        position: relative;
-        left: 280px;
-        top: 20%;
-
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-        transform: rotate(360deg);
-      }
-
       #page-one {
         /* 1 ㅣ 2 */
 
@@ -458,7 +250,7 @@
         width: 183px;
         height: 48px;
         left: 80px;
-        top: 300px;
+        top: 640px;
 
         font-family: "Noto Sans Symbols";
         font-style: normal;
@@ -477,7 +269,7 @@
         width: 183px;
         height: 48px;
         left: 100px;
-        top: 252px;
+        top: 590px;
 
         font-family: "Noto Sans Symbols";
         font-style: normal;
@@ -702,7 +494,7 @@
         width: 400px;
         height: 31px;
         left: 24px;
-        top: 500px;
+        top: 600px;
 
         font-family: "Inter";
         font-style: normal;
@@ -719,7 +511,7 @@
         width: 300px;
         height: 19px;
         left: 25px;
-        top: 530px;
+        top: 650px;
 
         font-family: "Inter";
         font-style: normal;
@@ -730,9 +522,6 @@
         color: #000000;
       }
     </style>
-
-
-
     <div id="bar">
       <div id="title">대처 요령</div>
       <div id="icon">
@@ -742,27 +531,52 @@
         <img src="../static/images/Group 1.png" />
       </div>
     </div>
-    <div id="time-tap">
-      <div id="time-text"><a href="?sort=recent" style="text-decoration:none;">최신순</a></div>
-    </div>
-    <div id="name-tap">
-      <div id="name-text"><a href="?sort=name" style="text-decoration:none;">이름순</a></div>
-    </div>
 
-        {% for post in post.all %}
-        <div id="list-one">
-        <div id="text-one"><a href="{% url 'detail' post.id %}" style="text-decoration:none;color:black;">{{post.title}}</a></div>
-         <!-- <button id="one">
+    <div id="list-one">
+      <div id="text-one">{{post_detail.title}}</div>
+      <button id="one" onclick="location.href">
         <img src="../static/images/down_line.png" />
-        </button>
+      </button>
 
-            {{post.upload_time}}
-        <br>
-            {{post.content}}
-          <br>-->
-        </div>
-        {% endfor %}
+      <div
+        type="detail"
+        style="
+          position: absolute;
+          width: 320px;
+          height: 445px;
+          left: 1px;
+          top: 50px;
+          font-size:10px;
+          background: #ffffff;
+          box-shadow: inset 0px 8px 25px rgba(13, 10, 44, 0.06);
+          border-radius: 10px;
+          border: none;
+          line-height: 200%;  <!--줄간격-->
+        "
+      />{{post_detail.content}}</div>
+      <div id="sub-box">
+        <div
+          id="sub-text"
+          style="
+            position: absolute;
+            width: 300px;
+            height: 30px;
+            left:0px;
+            top: 20px;
 
+            font-family: 'Noto Sans Symbols';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 141%;
+            /* or 20px */
+            text-align: center;
+
+            color: #000000;
+          "
+        >작성일자:{{post_detail.upload_time}}</div>
+      </div>
+    </div>
 
     <div id="page-one">1</div>
     <div id="page-two">2</div>
