@@ -7,6 +7,8 @@ from django.views.generic import View, CreateView, UpdateView, DeleteView
 from .models import User
 import requests
 
+uri = "http://127.0.0.1:8000"
+
 # 로그인 템플릿
 def oauth_login(request):
     return render(request, './user/login.html', {})
@@ -15,7 +17,7 @@ def oauth_login(request):
 class Kakao(View):
     def get(self, request):
         kakao_api="https://kauth.kakao.com/oauth/authorize?response_type=code"
-        redirect_uri="http://127.0.0.1:8000/users/oauth/callback"
+        redirect_uri=f"{uri}/oauth/callback"
         client_id="1301c1e0e19f2a3c5b9ee4a72d7b83ef"
         return redirect(f"{kakao_api}&client_id={client_id}&redirect_uri={redirect_uri}")
 
@@ -25,7 +27,7 @@ class KakaoCallback(View):
         data = {
             "grant_type":"authorization_code",
             "client_id":"1301c1e0e19f2a3c5b9ee4a72d7b83ef",
-            "redirection_uri":"http://127.0.0.1:8000/users/oauth",
+            "redirection_uri":f"{uri}/users/oauth",
             "code":request.GET["code"]
         }
         kakao_token_api="https://kauth.kakao.com/oauth/token"
@@ -47,4 +49,4 @@ class KakaoCallback(View):
         # 로그인
         user = User.objects.get(kakaoId=user_info['id'])
         login(request, user, 'user.auth.MyBackend')
-        return redirect('http://127.0.0.1:8000/')
+        return redirect(f'{uri}/markers/')
