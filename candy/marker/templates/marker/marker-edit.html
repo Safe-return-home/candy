@@ -3,6 +3,18 @@
 <form action="{% url 'marker:marker_edit' %}" method="post">
   {% csrf_token %}
   <h2>주소</h2>
+  <input type="text" name="latitude" id="latitude" value="33.45078616991599" style="display:none">
+  <input type="text" name="longitude" id="longitude" value="126.57059088071355" style="display:none">
+  <p id="address_print"></p>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var lat = urlParams.get('lat');
+    var lng = urlParams.get('lng');
+    var address = urlParams.get('address');
+    document.getElementById("latitude").value = lat;
+    document.getElementById("longitude").value = lng;
+    document.getElementById("address_print").innerText = address;
+  </script>
   <h2>가로등 수</h2>
   <input type="text" name="street_lamp" id="street_lamp" />
     <button class="my-button" id="bad" onclick="changeButtonColor_bad()">

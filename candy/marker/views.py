@@ -46,7 +46,15 @@ def marker_detail_view(request, pk):
 def marker_edit_view(request):
     # 기본 페이지
     if request.method == 'GET':
-        return render(request, './marker/marker-edit.html', {})
+        lat = request.GET.get('lat')
+        lng = request.GET.get('lng')
+        address = request.GET.get('address')
+        data = {
+            'lat' : lat,
+            'lng' : lng,
+            'address' : address,
+        }
+        return render(request, './marker/marker-edit.html', data)
     # 작성 클릭 시
     if request.method == 'POST':
         user = request.user
