@@ -42,7 +42,7 @@
   <div class="rating">
     <div>
       {% with rating_count=marker.rating %} {% for i in ''|rjust:rating_count %}
-      <img src="/static/images/purplecandy.png" width="20" />
+      <img src="/static/images/candy_purple.png" width="20" />
       {% endfor %} {% endwith %}
     </div>
     {{marker.regTime | date:"Y.m.d"}}
@@ -58,29 +58,7 @@
     </script>
   </div>
 </a>
-{% endfor %}
-<div
-  class="pagination"
-  style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-  "
->
-  <span class="step-links">
-    {% if markers.has_previous %}
-    <a href="?page={{ markers.previous_page_number }}">previous</a>
-    {% endif %}
-    <span class="current-page" style="color: #977dff; font-weight: 800"
-      >{{ markers.number }}</span
-    >
-    {% if markers.has_next %}
-    <a href="?page={{ markers.next_page_number }}">next</a>
-    {% endif %}
-  </span>
-</div>
-{% else %}
+{% endfor %} {% else %}
 <h5 style="text-align: center">아직 작성된 골목길이 없습니다.</h5>
 {% endif %} {% if not request.user.is_authenticated %}
 <button class="edit_road">작성하기</button>

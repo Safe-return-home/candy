@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 import requests
 from .models import Marker, Comment
-from django.core.paginator import Paginator
 from django.utils import timezone
 
 def marker_view(request):
@@ -18,11 +17,7 @@ def marker_view(request):
             longitude__range=(longitude - 0.002, longitude + 0.002)
         )
 
-        paginator = Paginator(filtered_markers, 3)  # 한 페이지당 3개의 마커 표시
-        page_number = request.GET.get('page')  # 현재 페이지 번호 가져오기
-        page_markers = paginator.get_page(page_number)  # 해당 페이지에 해당하는 마커 가져오기
-
-        return render(request, 'marker/marker.html', {"markers": page_markers, "status": status})
+        return render(request, 'marker/marker.html', {"markers": filtered_markers, "status": status})
 
 
 # 지도 상세
