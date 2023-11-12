@@ -9,7 +9,7 @@
     <img
       src="{% static 'images/kakao_login.png' %}"
       alt="카카오계정 로그인"
-      style="height: 50px; width: 320px; margin: 27px"
+      style="height: 50px; width: 320px; margin: auto"
     />
   </a>
 </div>
@@ -38,5 +38,5 @@
   }
 </script>
 
-<a href="{% url 'user:oauth' %}">카카오로 시작하기</a>
+<a href="{% url 'user:oauth' %}" style="margin: 10px auto">카카오로 시작하기</a>
 {% endblock %}
