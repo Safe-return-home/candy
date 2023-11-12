@@ -1,0 +1,155 @@
+.post-form {
+    max-width: 375px;
+    margin: 10px;
+}
+
+.post-form textarea {
+    width: 350px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+.myRadio {
+    width: 120px; /* 이미지의 크기 조정 */
+    height: 85px;
+}
+
+.image-button {
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.image-button img {
+    display: block;
+    width: 120px; /* 이미지의 크기 조정 */
+    height: 85px;
+}
+  
+input[type="radio"] {
+    display: none;
+}
+  
+input[type="radio"]:checked + label {
+    width: 120px; /* 이미지의 크기 조정 */
+    height: 85px;
+    /* 선택된 상태의 스타일 적용 */
+}
+
+.my-button {
+    background-color: white; /* 초기 버튼 색상 */
+}
+
+button#submit{
+    margin: 10px 20px;
+    font-size: 20px;
+    background-color: #7F50FF;
+    color:white;
+    width:140px;
+    height:50px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+button#reset{
+    margin: 10px 20px;
+    font-size: 20px;
+    background-color: white;
+    color:grey;
+    width:140px;
+    height:50px;
+    border-radius: 20px;
+    border:none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+}
+
+button#bad{
+    margin: 0px 6px;
+    font-size: 18px;
+    background-color: white;
+    color:grey;
+    width:100px;
+    height:40px;
+    border-radius: 20px;
+    border:none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+}
+
+button#soso{
+    margin: 0px 6px;
+    font-size: 18px;
+    background-color: white;
+    color:grey;
+    width:100px;
+    height:40px;
+    border-radius: 20px;
+    border:none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+}
+
+button#good{
+    margin: 0px 6px;
+    font-size: 18px;
+    background-color: white;
+    color:grey;
+    width:100px;
+    height:40px;
+    border-radius: 20px;
+    border:none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+}
+
+
+button#bad1{
+    margin: 0px 6px;
+    font-size: 18px;
+    background-color: white;
+    color:grey;
+    width:100px;
+    height:40px;
+    border-radius: 20px;
+    border:none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+}
+
+button#soso1{
+    margin: 0px 6px;
+    font-size: 18px;
+    background-color: white;
+    color:grey;
+    width:100px;
+    height:40px;
+    border-radius: 20px;
+    border:none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+}
+
+button#good1{
+    margin: 0px 6px;
+    font-size: 18px;
+    background-color: white;
+    color:grey;
+    width:100px;
+    height:40px;
+    border-radius: 20px;
+    border:none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+}
+
+div{
+    width: 375px;
+}
+
+div#candy{
+    width: 250px;
+    margin: auto;
+}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 import requests
 from .models import Marker, Comment
-
+from django.utils import timezone
 # 지도 기본
 
 
@@ -10,8 +10,8 @@ def marker_view(request):
     if request.method == 'GET':
         return render(request, 'marker/marker.html', {})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
-    elif request.method == 'POST':
-        status = int(request.POST.get('status', 0))
+    if request.method == 'POST':
+        status = int(request.POST.get('status', 1))
         latitude = float(request.POST.get('latitude', 33.450701))
         longitude = float(request.POST.get('longitude', 126.570667))
         filtered_markers = Marker.objects.filter(
@@ -93,3 +93,22 @@ def marker_detail_delete(request, pk):
     except Marker.DoesNotExist:
         marker_delete = None
     return redirect('marker:markers')
+
+def marker_detail_update_page(request, pk):
+    try:
+        marker_update = get_object_or_404(Marker, pk=pk)
+    except Marker.DoesNotExist:
+        marker_update=None
+    return render(request,'marker/update.html', {'marker':marker_update})
+
+def marker_detail_update(request,pk):
+    marker_update=get_object_or_404(Marker, pk=pk)
+    #marker_update.address = request.POST['address']
+    marker_update.street_lamp=request.POST['street_lamp']
+    marker_update.population=request.POST['population']
+    marker_update.rating=request.POST['rating']
+    marker_update.body=request.POST['body']
+    marker_update.image=request.POST.get('image')
+    marker_update.regTime=timezone.now()
+    marker_update.save()
+    return redirect('marker:marker_detail', pk=pk)

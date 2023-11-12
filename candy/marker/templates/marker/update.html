@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>update</title>
+
+</head>
+<body>
+
+    <h1>Updating Marker_detail</h1>
+
+    <form action="{% url 'marker:detail_update' marker.id %}" method="post">
+
+        {% csrf_token %}
+        <p>주소: <input type="text" name="address" value="{{marker.address}}"> </p>
+        가로등 수: <input type="text" name="street_lamp" value="{{ marker.street_lamp }}"> </p>
+        유동인구 수: <input type="text" name="population" value="{{ marker.population }}"> </p>
+        안전캔디: <input type="text" name="rating" value="{{marker.rating}}"> </p>
+        자세한리뷰: <textarea name="body" cols="30" rows="10" > {{marker.body}} </textarea></p>
+        사진 업로드: <input type="file" name="image" id="image" accept="image/*"><br>
+
+        <button type="submit">수정하기</button>
+
+    </form>
+
+</body>
+</html>

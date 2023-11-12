@@ -19,7 +19,7 @@ from post.views import sounds, Post
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('user.urls')),
+    path('', include('user.urls')),
     path('markers/', include('marker.urls')),
     path('sounds/', sounds, name="sounds"),
     path('countermeasure/',Post, name="post"),

@@ -1,6 +1,6 @@
 <!--POST로 뷰에 위도, 경도 정보 보냄-->
-<h5 id="address" style="color: #977dff"></h5>
-<h5 id="road_address" style="color: #977dff"></h5>
+<h5 id="address" style="color: #977dff; text-align: center"></h5>
+<h5 id="road_address" style="color: #977dff; text-align: center"></h5>
 <form action="{% url 'marker:markers' %}" method="post">
   {% csrf_token %}
   <input type="hidden" name="latitude" id="latitude" />
@@ -27,15 +27,9 @@
   </div>
 </a>
 {% endfor %} {% else %}
-<h5>아직 작성된 골목길이 없습니다.</h5>
+<h5 style="text-align: center">아직 작성된 골목길이 없습니다.</h5>
 {% endif %}
-<form id="addressForm" method="post">
-  {% csrf_token %}
-  <input type="hidden" id="addressInput" name="address" value="" />
-  <button class="edit_road" onclick="submitAddress(0); return false;">
-    작성하기
-  </button>
-</form>
+<button class="edit_road" onclick="submitAddress();">작성하기</button>
 <script>
   var options = {
     center: new kakao.maps.LatLng(33.450701, 126.570667),
@@ -79,18 +73,19 @@
 
     map.setCenter(locPosition);
   }
-
+  var latlng, latitude, longitude;
   kakao.maps.event.addListener(map, "click", function (mouseEvent) {
     if (marker) {
       // 기존에 생성된 마커가 있다면 삭제
       marker.setMap(null);
     }
-    var latlng = mouseEvent.latLng;
-    var latitude = latlng.getLat();
-    var longitude = latlng.getLng();
+    latlng = mouseEvent.latLng;
+    latitude = latlng.getLat();
+    longitude = latlng.getLng();
 
     // 위도, 경도 값을 입력 폼에 설정
     document.getElementById("latitude").value = latitude;
+    console.log(latitude);
     document.getElementById("longitude").value = longitude;
 
     var imageSrc = "/static/images/road.png";
@@ -130,14 +125,10 @@
         }
       }
     };
-    var addressList = [address, road_address, latitude, longitude];
-    addressInput.value = addressList;
-    console.log(addressList);
+
     geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
   }
   function submitAddress() {
-    var addressInput = document.getElementById("AddressInput");
-    addressInput.value = address;
-    document.getElementById("addressForm").submit();
+    location.href = "edit/lat=" + latitude + "/lng=" + longitude;
   }
 </script>

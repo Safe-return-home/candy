@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap");
 
-.nav {
+form {
+  width: 100%;
+}
+form .nav {
   display: inline-flex;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: 350px;
   background-color: #fff;
   justify-content: center;
+  padding: 0;
+  margin: auto;
 }
 
 .nav-item {
