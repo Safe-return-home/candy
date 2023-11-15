@@ -18,9 +18,11 @@
   {% include 'head.html' %}
   <body>
     <div class="content">
-      <div>{% include 'header.html' %}</div>
-      <div>{% block content %} {% endblock %}</div>
-      <div>{% include 'footer.html' %}</div>
+      {% include 'header.html' %}
+      <hr />
+      {% block content %} {% endblock %}
+      <hr />
+      {% include 'footer.html' %}
     </div>
   </body>
 </html>
