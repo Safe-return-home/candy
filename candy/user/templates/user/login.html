@@ -4,15 +4,14 @@
   <img src="/static/images/main.png" />
 </div>
 <br />
-<div class="box">
-  <a href="{% url 'user:oauth' %}">
-    <img
-      src="{% static 'images/kakao_login.png' %}"
-      alt="카카오계정 로그인"
-      style="height: 50px; width: 320px; margin: 27px"
-    />
-  </a>
-</div>
+  <img
+    src="{% static 'images/kakao_login.png' %}"
+    alt="카카오계정 로그인"
+    style="height: 50px; width: 320px; margin: 10px;"
+    onclick="goLogin()"
+  />
+</a>
+<div onclick="goLogin()" style="text-align: center; color: #aaa; font-weight: 800;">카카오로 시작하기</div>
 <script>
   window.Kakao.init("본인 JAVASCRIPT API 키");
 
@@ -36,7 +35,8 @@
       },
     });
   }
+  function goLogin() {
+    location.href = "oauth/";
+  }
 </script>
-
-<a href="{% url 'user:oauth' %}">카카오로 시작하기</a>
 {% endblock %}

@@ -11,7 +11,7 @@ uri = "http://127.0.0.1:8000"
 
 # 로그인 템플릿
 def oauth_login(request):
-    return render(request, './user/login.html', {})
+    return render(request, './user/login.html', {"title":"Main"})
 
 # 인가 코드 요청
 class Kakao(View):
