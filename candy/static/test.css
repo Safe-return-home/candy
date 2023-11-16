@@ -1,0 +1,115 @@
+#p-bad-box {
+  /* Rectangle 1693 */
+
+  position: absolute;
+  left: 11.47%;
+  right: 64.53%;
+  top: 31.24%;
+  bottom: 65.32%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+}
+
+#p-bad-text {
+  /* 별로예요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 62px;
+  top: 327px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+#p-soso-box {
+  /* Rectangle 1694 */
+
+  position: absolute;
+  left: 37.6%;
+  right: 38.4%;
+  top: 31.24%;
+  bottom: 65.32%;
+
+  /* Neutral/100 */
+  background: #ffffff;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+}
+
+#p-soso-text {
+  /* 적당해요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 161px;
+  top: 327px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+#p-good-box {
+  /* Rectangle 1695 */
+
+  position: absolute;
+  left: 64.8%;
+  right: 11.2%;
+  top: 31.24%;
+  bottom: 65.32%;
+
+  background: #d3c3f7;
+  box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+    0px -2px 4px rgba(20, 20, 43, 0.02), 0px 10px 24px rgba(20, 20, 43, 0.04);
+  border-radius: 10px;
+}
+
+#p-good-text {
+  /* 만족해요 */
+
+  position: absolute;
+  width: 57px;
+  height: 19px;
+  left: 262px;
+  top: 327px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
+
+#candy-1 {
+  /* 안전캔디_컬러 */
+
+  width: 42px;
+  height: 43px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
