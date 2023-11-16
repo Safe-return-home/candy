@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>대처요령</title>
   </head>
-  <body>
+  <body style="background-color: #aaaaaa">
     <style>
       #container {
         position: relative;
-        width: 100%;
+        width: 375px;
         height: 812px;
         background: #ffffff;
-        text-align: center;
+        margin: 0 auto;
       }
 
       #bar {
@@ -95,7 +95,7 @@
         width: 57px;
         height: 19px;
         left: 15px;
-        top: 10px;
+        top: 7px;
 
         font-family: "Inter";
         font-style: normal;
@@ -112,10 +112,11 @@
         /* Rectangle 1694 */
 
         position: relative;
-        left: 7%;
-        top: 125px;
+        left: 20px;
+        top: 155px;
         width: 90px;
         height: 35px;
+        border: none;
 
         background: #d3c3f7;
         box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
@@ -150,7 +151,7 @@
         box-sizing: border-box;
 
         position: relative;
-        left: 2%;
+        left: 8%;
         top: 180px;
         width: 320px;
         height: 50px;
@@ -180,20 +181,6 @@
         text-align: center;
 
         color: #000000;
-      }
-
-      #one {
-        /* down_line */
-
-        position: relative;
-        left: 280px;
-        bottom: 10%;
-
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-
-        transform: rotate(360deg);
       }
 
       #list-two {
@@ -234,18 +221,6 @@
         color: #000000;
       }
 
-      #two {
-        /* down_line */
-
-        position: relative;
-        left: 280px;
-        top: 15px;
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-        transform: rotate(360deg);
-      }
-
       #list-three {
         /* Rectangle 31 */
 
@@ -282,19 +257,6 @@
         text-align: center;
 
         color: #000000;
-      }
-
-      #three {
-        /* down_line */
-
-        position: relative;
-        left: 280px;
-        top: 15px;
-
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-        transform: rotate(360deg);
       }
 
       #list-four {
@@ -335,17 +297,6 @@
         color: #000000;
       }
 
-      #four {
-        position: relative;
-        left: 280px;
-        top: 18%;
-
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-        transform: rotate(360deg);
-      }
-
       #list-five {
         /* Rectangle 33 */
 
@@ -382,19 +333,6 @@
         text-align: center;
 
         color: #000000;
-      }
-
-      #five {
-        /* down_line */
-
-        position: relative;
-        left: 280px;
-        top: 20%;
-
-        /* Grey/01 */
-        background: transparent;
-        border: none;
-        transform: rotate(360deg);
       }
 
       #page-one {
@@ -435,307 +373,85 @@
         color: #000000;
       }
 
-      #footer {
-        /* 푸터 */
-
-        position: absolute;
-        width: 375px;
+      footer {
+        bottom: 0;
+        left: 0;
         height: 227px;
-        left: -1px;
-        top: 585px;
+        width: 375px;
+        background-color: #ddd;
+        padding-top: 80px;
+      }
 
-        /* 디자인 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 28px;
-        top: 104px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 250px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 김채현 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 109px;
-        top: 104px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 김채현 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 109px;
-        top: 141px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 양수빈 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 109px;
-        top: 176px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 이지원 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 158px;
-        top: 176px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 김소영 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 158px;
-        top: 141px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 박상아 */
-
-        position: absolute;
-        width: 39px;
-        height: 19px;
-        left: 207px;
-        top: 141px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* 프론트 */
-
-        position: absolute;
-        width: 62px;
-        height: 19px;
-        left: 28px;
-        top: 139px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* Back-end */
-
-        position: absolute;
-        width: 57px;
-        height: 19px;
-        left: 28px;
-        top: 176px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
-
-        /* HERETHON 15 */
-
-        position: absolute;
-        width: 189px;
-        height: 31px;
-        left: 24px;
-        top: 57px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
+      #bye {
         font-size: 25px;
-        line-height: 30px;
-        /* identical to box height */
+      }
 
-        color: #000000;
+      #table {
+        font-size: 15px;
+      }
 
-        /* 안전히 가세요, 여러분! */
-
-        position: absolute;
-        width: 253px;
-        height: 31px;
-        left: 24px;
-        top: 25px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        line-height: 30px;
-        /* identical to box height */
-
-        color: #000000;
-
-        /* Copyright */
-
-        position: absolute;
-        width: 126px;
-        height: 20px;
-        left: 28px;
-        top: 200px;
-
-        font-family: "DM Sans";
-        font-style: normal;
-        font-weight: 400;
+      #copyright {
         font-size: 5px;
-        line-height: 20px;
-        /* identical to box height, or 400% */
-
-        /* Neutral/600 */
-        color: #6f6c90;
-      }
-
-      #footer-text {
-        /* HERETHON 15 */
-
-        position: relative;
-        width: 400px;
-        height: 31px;
-        left: 24px;
-        top: 500px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        line-height: 30px;
-        /* identical to box height */
-
-        color: #000000;
-      }
-
-      #footer-name {
-        position: relative;
-        width: 300px;
-        height: 19px;
-        left: 25px;
-        top: 530px;
-
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #000000;
       }
     </style>
-    <div id="bar">
-      <div id="title">대처 요령</div>
-      <div id="icon">
-        <img src="../static/images/심볼.png" />
+    <div id="container">
+      <div id="bar">
+        <div id="title">대처 요령</div>
+        <div id="icon">
+          <img src="../static/images/심볼 (1).png" />
+        </div>
+        <div id="list">
+          <img src="../static/images/Group 1 (1).png" />
+        </div>
       </div>
-      <div id="list">
-        <img src="../static/images/Group 1.png" />
+      <button id="time-tap">
+        <div id="time-text">최신순</div>
+      </button>
+      <button id="name-tap">
+        <div id="name-text">이름순</div>
+      </button>
+      <div id="list-one">
+        <div id="text-one">대중교통 내 성범죄 대처요령</div>
       </div>
-    </div>
-    <div id="time-tap">
-      <div id="time-text">최신순</div>
-    </div>
-    <div id="name-tap">
-      <div id="name-text">이름순</div>
-    </div>
-    <div id="list-one">
-      <div id="text-one">대중교통 내 성범죄 대처요령</div>
-      <button id="one">
-        <img src="../static/images/down_line.png" />
-      </button>
-    </div>
-    <div id="list-one">
-      <div id="text-one">스토킹 대처요령</div>
-      <button id="one">
-        <img src="../static/images/down_line.png" />
-      </button>
-    </div>
-    <div id="list-one">
-      <div id="text-one">스토킹 가해 신고 후 추가 보호</div>
-      <button id="one">
-        <img src="../static/images/down_line.png" />
-      </button>
-    </div>
-    <div id="list-one">
-      <div id="text-one">스토킹 피해자 지원 제도</div>
-      <button id="one">
-        <img src="../static/images/down_line.png" />
-      </button>
-    </div>
-    <div id="list-one">
-      <div id="text-one">불법 촬영 등에 대한 처벌</div>
-      <button id="one">
-        <img src="../static/images/down_line.png" />
-      </button>
-    </div>
-    <div id="page-one">1</div>
-    <div id="page-two">2</div>
-    <div id="footer">
-      <div id="footer-text">
-        안전히 가세요, 여러분!
-        <br />
-        HERETHON 15
+      <div id="list-one">
+        <div id="text-one">스토킹 대처요령</div>
       </div>
-      <div id="footer-name">
+      <div id="list-one">
+        <div id="text-one">스토킹 가해 신고 후 추가 보호</div>
+      </div>
+      <div id="list-one">
+        <div id="text-one">스토킹 피해자 지원 제도</div>
+      </div>
+      <div id="list-one">
+        <div id="text-one">불법 촬영 등에 대한 처벌</div>
+      </div>
+      <div id="page-one">1</div>
+      <div id="page-two">2</div>
+      <div class="footer">
         <br />
-        디자인 김채현
+        <a id="bye">
+          안전히 가세요, 여러분! <br />
+          HERETHON 15 <br />
+        </a>
         <br />
-        Front-end 김채현 김소영 박상아
+        <table id="table" style="width: 375px" text-align="left">
+          <tr>
+            <td>디자인</td>
+            <td>김채현</td>
+          </tr>
+          <tr>
+            <td>Front-end</td>
+            <td>김채현 김소영 박상아</td>
+          </tr>
+          <tr>
+            <td>Back-end</td>
+            <td>양수빈 이지원</td>
+          </tr>
+        </table>
         <br />
-        Back-end 양수빈 이지원
+        <a id="copyright"
+          >Copyright © 2022 BRIX Templates | All Rights Reserved</a
+        >
       </div>
     </div>
   </body>
