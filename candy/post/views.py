@@ -1,22 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from post.models import Posting
-from django.db.models import Count
 
 def Post(request):
-    sort_condition=request.GET.get('sort', 'name')
-    # http://127.0.0.1:8000/countermeasure/?sort=recent
-    if sort_condition=="recent":
-        posts=Posting.objects.order_by('-upload_time')
-        return render(request, 'post.html', {'post': posts})
-    # http://127.0.0.1:8000/countermeasure/?sort=name
-    elif sort_condition=="name":
-        posts=Posting.objects.order_by('title')
-        return render(request, 'post.html', {'post': posts, "title":"대처 요령"})
-    #posts=Posting.objects.all()
+    posts=Posting.objects.all()
+    return render(request, 'post.html', {'post':posts})
 
-
-def Post_detail(request, pk):
-    post_detail=get_object_or_404(Posting, pk=pk)
-    return render(request, 'post_detail.html', {'post_detail':post_detail, "title" : "대처 요령"})
 def sounds(request):
-    return render(request, 'sounds.html', {"title":"사이렌"})
+    return render(request, 'sounds.html', {})
