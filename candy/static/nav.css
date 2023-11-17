@@ -1,10 +1,14 @@
 .container {
+  /* Rectangle 32 */
+
+  box-sizing: border-box;
+
   position: relative;
+  left: 0%;
+  right: 0%;
   top: -8.25%;
   bottom: 65.02%;
-  width: 375px;
-  height: 351px;
-  margin: 0 auto;
+  width: 100%;
 
   /* Neutral/100 */
 
