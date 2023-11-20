@@ -88,7 +88,7 @@ def marker_edit_view(request):
             body=body,
             image=image
         )
-        return redirect('marker:markers')
+        return render(request, 'marker/marker.html', {"status": 1, "title":"Map"})
 
 # police 조회
 def marker_police_view(request):
