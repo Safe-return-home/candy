@@ -1,30 +1,220 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %} {% block content %} {% load static %}
 
-    <title>update</title>
+<form action="{% url 'marker:detail_update' marker.id %}" method="post">
+  {% csrf_token %}
+  <h2>주소</h2>
+  <input type="text" name="latitude" id="latitude" value="{{data.lat}}" style="display:none" required />
+  <input type="text" name="longitude" id="longitude" value="{{data.lng}}" style="display:none" required />
+  <p id="address_print">{{ marker.address }}</p>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var lat = urlParams.get('lat');
+    var lng = urlParams.get('lng');
+    var address = urlParams.get('address');
+    document.getElementById("latitude").value = lat;
+    document.getElementById("longitude").value = lng;
+    document.getElementById("address_print").innerText = address;
+  </script>
+  <h2>가로등 수</h2>
+  <input type="text" name="street_lamp" id="street_lamp" required/>
+    <button class="my-button" id="bad" onclick="changeButtonColor_bad()">
+      별로예요
+    </button>
+    <button class="my-button" id="soso" onclick="changeButtonColor_soso()">
+      적당해요
+    </button>
+    <button class="my-button" id="good" onclick="changeButtonColor_good()">
+      만족해요
+    </button>
 
-</head>
-<body>
+  <h2>유동 인구 수</h2>
+  <input type="text" name="population" id="population" required/>
+    <button class="my-button" id="bad1" onclick="changeButtonColor_bad1()">
+      별로예요
+    </button>
+    <button class="my-button" id="soso1" onclick="changeButtonColor_soso1()">
+      적당해요
+    </button>
+    <button class="my-button" id="good1" onclick="changeButtonColor_good1()">
+      만족해요
+    </button>
 
-    <h1>Updating Marker_detail</h1>
+  </div>
+  <h2>안전 캔디</h2>
+  <div>
+    <input type="number" name="rating" id="candy" required />
+    <img
+      class="myImage"
+      type="image"
+      src="{% static 'images/candy_grey.png' %}"
+      onclick="changeImages1()"
+    />
+    <img
+      class="myImage"
+      type="image"
+      src="/img/candy_grey.png"
+      onclick="changeImages2()"
+    />
+    <img
+      class="myImage"
+      type="image"
+      src="/img/candy_grey.png"
+      onclick="changeImages3()"
+    />
+    <img
+      class="myImage"
+      type="image"
+      src="/img/candy_grey.png"
+      onclick="changeImages4()"
+    />
+    <img
+      class="myImage"
+      type="image"
+      src="/img/candy_grey.png"
+      onclick="changeImages5()"
+    />
+  </div>
+  <h2>자세한 리뷰</h2>
+  <textarea
+    name="body"
+    placeholder="리뷰할 내용을 입력해 주세요."
+    required
+  ></textarea>
+  <label for="photo-upload" class="upload-button"></label>
+  <input type="file" name="image" id="photo-upload" />
+  <br />
+  <br />
+  <button id="submit" type="submit">수정</button>
+  <script>
+    const candy_value = 0;
 
-    <form action="{% url 'marker:detail_update' marker.id %}" method="post">
+    function changeImages1() {
+      var candies = document.getElementById("candy");
+      var images = document.getElementsByClassName("myImage");
+      for (var i = 0; i < images.length; i++) {
+        images[i].src = "/img/candy_grey.png";
+      }
+      for (var i = 0; i < 1; i++) {
+        images[i].src = "/img/candy_purple.png";
+      }
+      candies.value = 1;
+      candy_value = 1;
+    }
 
-        {% csrf_token %}
-        <p>주소: <input type="text" name="address" value="{{marker.address}}"> </p>
-        가로등 수: <input type="text" name="street_lamp" value="{{ marker.street_lamp }}"> </p>
-        유동인구 수: <input type="text" name="population" value="{{ marker.population }}"> </p>
-        안전캔디: <input type="text" name="rating" value="{{marker.rating}}"> </p>
-        자세한리뷰: <textarea name="body" cols="30" rows="10" > {{marker.body}} </textarea></p>
-        사진 업로드: <input type="file" name="image" id="image" accept="image/*"><br>
+    function changeImages2() {
+      var candies = document.getElementById("candy");
+      var images = document.getElementsByClassName("myImage");
+      for (var i = 0; i < images.length; i++) {
+        images[i].src = "/img/candy_grey.png";
+      }
+      for (var i = 0; i < 2; i++) {
+        images[i].src = "/img/candy_purple.png";
+      }
+      candies.value = 2;
+      candy_value = 2;
+    }
 
-        <button type="submit">수정하기</button>
+    function changeImages3() {
+      var candies = document.getElementById("candy");
+      var images = document.getElementsByClassName("myImage");
+      for (var i = 0; i < images.length; i++) {
+        images[i].src = "/img/candy_grey.png";
+      }
+      for (var i = 0; i < 3; i++) {
+        images[i].src = "/img/candy_purple.png";
+      }
+      candies.value = 3;
+      candy_value = 3;
+    }
 
-    </form>
+    function changeImages4() {
+      var candies = document.getElementById("candy");
+      var images = document.getElementsByClassName("myImage");
+      for (var i = 0; i < images.length; i++) {
+        images[i].src = "/img/candy_grey.png";
+      }
+      for (var i = 0; i < 4; i++) {
+        images[i].src = "/img/candy_purple.png";
+      }
+      candies.value = 4;
+      candy_value = 4;
+    }
 
-</body>
-</html>
+    function changeImages5() {
+      var candies = document.getElementById("candy");
+      var images = document.getElementsByClassName("myImage");
+      for (var i = 0; i < 5; i++) {
+        images[i].src = "/img/candy_purple.png";
+      }
+      candies.value = 5;
+      candy_value = 5;
+    }
+
+    function changeButtonColor_bad() {
+        var lamps = document.getElementById("street_lamp");
+          var button = document.getElementById("bad");
+          button.style.backgroundColor = "#D3C3F7"; /* 변경할 색상 */
+          lamps.value="별로예요";
+          console.log(lamps.value);
+    }
+
+        function changeButtonColor_soso() {
+           var lamps = document.getElementById("street_lamp");
+            var button = document.getElementById("soso");
+            button.style.backgroundColor = "#D3C3F7"; /* 변경할 색상 */
+            lamps.value="적당해요";
+            console.log(lamps.value);
+    }
+
+          function changeButtonColor_good() {
+            var lamps = document.getElementById("street_lamp");
+              var button = document.getElementById("good");
+              button.style.backgroundColor = "#D3C3F7"; /* 변경할 색상 */
+              lamps.value="만족해요";
+              console.log(lamps.value);
+    }
+
+            function changeButtonColor_bad1() {
+                var population = document.getElementById("population");
+                  var button = document.getElementById("bad1");
+                  button.style.backgroundColor = "#D3C3F7"; /* 변경할 색상 */
+                  population.value="별로예요";
+                  console.log(population.value);
+    }
+
+                function changeButtonColor_soso1() {
+                  var population = document.getElementById("population");
+                    var button = document.getElementById("soso1");
+                    button.style.backgroundColor = "#D3C3F7"; /* 변경할 색상 */
+                    population.value="적당해요";
+                    console.log(population.value);
+
+                  }
+
+                  function changeButtonColor_good1() {
+                    var population = document.getElementById("population");
+                      var button = document.getElementById("good1");
+                      button.style.backgroundColor = "#D3C3F7"; /* 변경할 색상 */
+                      population.value="만족해요";
+                      console.log(population.value);
+
+
+                    }
+  </script>
+
+<!--  <input-->
+<!--    type="text"-->
+<!--    name="latitude"-->
+<!--    id="latitude"-->
+<!--    value="33.45078616991599"-->
+<!--    style="display: none"-->
+<!--  />-->
+<!--  <input-->
+<!--    type="text"-->
+<!--    name="longitude"-->
+<!--    id="longitude"-->
+<!--    value="126.57059088071355"-->
+<!--    style="display: none"-->
+<!--  />-->
+</form>
+{% endblock %}

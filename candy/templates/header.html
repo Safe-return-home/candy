@@ -1,5 +1,36 @@
 <div class="header">
-  <div>
-    <h1>header</h1>
+  <div
+    style="
+      width: 355px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    "
+  >
+    <img
+      src="../static/images/symbol.png"
+      width="34px"
+      height="34px"
+      onclick="goMain()"
+    />
+    <p
+      style="
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      "
+    >
+      {{title}}
+    </p>
+    <img src="../static/images/menu.png" width="24px" height="17px" />
   </div>
 </div>
+<script>
+  function goMain() {
+    location.href = "";
+  }
+</script>

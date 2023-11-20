@@ -2,10 +2,57 @@ body {
   background-color: #aaa;
   margin: 0;
 }
+
 .content {
   background-color: #fff;
   width: 375px;
   margin: 0 auto;
   padding: 10px;
   box-sizing: border-box;
+}
+
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  width: 375px;
+  padding: 15px;
+  color: black;
+  font-size: xx-large;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+nav {
+  display: flex;
+  width: 375px;
+}
+
+.candy {
+  flex: 1;
+}
+
+.link {
+  flex: 8;
+}
+
+.menu {
+  flex: 1;
+}
+
+section {
+  width: 375px;
+  display: flex;
+}
+
+.main_png {
+  width: 375px;
+  padding: 40px;
+}
+.main_png img {
+  width: 70%;
+  margin: 10px auto;
 }

@@ -3,8 +3,8 @@
 <form action="{% url 'marker:marker_edit' %}" method="post">
   {% csrf_token %}
   <h2>주소</h2>
-  <input type="text" name="latitude" id="latitude" value="{{data.lat}}" style="display:none">
-  <input type="text" name="longitude" id="longitude" value="{{data.lng}}" style="display:none">
+  <input type="text" name="latitude" id="latitude" value="{{data.lat}}" style="display:none" required />
+  <input type="text" name="longitude" id="longitude" value="{{data.lng}}" style="display:none" required />
   <p id="address_print"></p>
   <script>
     var urlParams = new URLSearchParams(window.location.search);
@@ -16,7 +16,7 @@
     document.getElementById("address_print").innerText = address;
   </script>
   <h2>가로등 수</h2>
-  <input type="text" name="street_lamp" id="street_lamp" />
+  <input type="text" name="street_lamp" id="street_lamp" required/>
     <button class="my-button" id="bad" onclick="changeButtonColor_bad()">
       별로예요
     </button>
@@ -28,7 +28,7 @@
     </button>
 
   <h2>유동 인구 수</h2>
-  <input type="text" name="population" id="population" />
+  <input type="text" name="population" id="population" required/>
     <button class="my-button" id="bad1" onclick="changeButtonColor_bad1()">
       별로예요
     </button>
@@ -42,7 +42,7 @@
   </div>
   <h2>안전 캔디</h2>
   <div>
-    <input type="number" name="rating" id="candy" />
+    <input type="number" name="rating" id="candy" required />
     <img
       class="myImage"
       type="image"
@@ -102,6 +102,7 @@
       candy_value = 1;
     }
 
+
     function changeImages2() {
       var candies = document.getElementById("candy");
       var images = document.getElementsByClassName("myImage");
@@ -158,7 +159,7 @@
           lamps.value="별로예요";
           console.log(lamps.value);
     }
-      
+
         function changeButtonColor_soso() {
            var lamps = document.getElementById("street_lamp");
             var button = document.getElementById("soso");
@@ -166,7 +167,7 @@
             lamps.value="적당해요";
             console.log(lamps.value);
     }
-      
+
           function changeButtonColor_good() {
             var lamps = document.getElementById("street_lamp");
               var button = document.getElementById("good");
@@ -182,40 +183,40 @@
                   population.value="별로예요";
                   console.log(population.value);
     }
-              
+
                 function changeButtonColor_soso1() {
                   var population = document.getElementById("population");
                     var button = document.getElementById("soso1");
                     button.style.backgroundColor = "#D3C3F7"; /* 변경할 색상 */
                     population.value="적당해요";
                     console.log(population.value);
-                    
+
                   }
-              
+
                   function changeButtonColor_good1() {
                     var population = document.getElementById("population");
                       var button = document.getElementById("good1");
                       button.style.backgroundColor = "#D3C3F7"; /* 변경할 색상 */
                       population.value="만족해요";
                       console.log(population.value);
-                
-                      
+
+
                     }
   </script>
 
-<!--  <input-->
-<!--    type="text"-->
-<!--    name="latitude"-->
-<!--    id="latitude"-->
-<!--    value="33.45078616991599"-->
-<!--    style="display: none"-->
-<!--  />-->
-<!--  <input-->
-<!--    type="text"-->
-<!--    name="longitude"-->
-<!--    id="longitude"-->
-<!--    value="126.57059088071355"-->
-<!--    style="display: none"-->
-<!--  />-->
+{% comment %} <!—  <input—>
+<!—    type="text"—>
+<!—    name="latitude"—>
+<!—    id="latitude"—>
+<!—    value="33.45078616991599"—>
+<!—    style="display: none"—>
+<!—  />—>
+<!—  <input—>
+<!—    type="text"—>
+<!—    name="longitude"—>
+<!—    id="longitude"—>
+<!—    value="126.57059088071355"—>
+<!—    style="display: none"—>
+<!—  />—> {% endcomment %}
 </form>
 {% endblock %}

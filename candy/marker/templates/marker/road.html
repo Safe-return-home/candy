@@ -1,19 +1,48 @@
 <!--POST로 뷰에 위도, 경도 정보 보냄-->
 <h5 id="address" style="color: #977dff; text-align: center"></h5>
 <h5 id="road_address" style="color: #977dff; text-align: center"></h5>
-<form action="{% url 'marker:markers' %}" method="post">
+<form
+  action="{% url 'marker:markers' %}"
+  method="post"
+  id="view_arround"
+  style="display: none"
+>
   {% csrf_token %}
   <input type="hidden" name="latitude" id="latitude" />
   <input type="hidden" name="longitude" id="longitude" />
   <button type="submit" class="search_road">주변 상황 보기</button>
 </form>
 <!--받아온 정보가 있다면 출력-->
+<script>
+  var options = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667),
+    level: 5,
+  };
+
+  var map = new kakao.maps.Map(document.getElementById("map"), options);
+</script>
 {% if markers %} {% for marker in markers %}
+<script>
+  function addMarker(lat, lng) {
+    var imageSrc = "/static/images/road.png";
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(26, 32);
+    // 마커 이미지를 생성합니다
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+    var newposition = new kakao.maps.LatLng(lat, lng);
+    // 마커 추가
+    marker = new kakao.maps.Marker({
+      position: newposition,
+      image: markerImage,
+    });
+    marker.setMap(map);
+  }
+</script>
 <a class="preview" href="{% url 'marker:marker_detail' pk=marker.pk %}">
   <div class="rating">
     <div>
       {% with rating_count=marker.rating %} {% for i in ''|rjust:rating_count %}
-      <img src="/static/images/purplecandy.png" width="20" />
+      <img src="/static/images/candy_purple.png" width="20" />
       {% endfor %} {% endwith %}
     </div>
     {{marker.regTime | date:"Y.m.d"}}
@@ -24,19 +53,25 @@
     <p>|</p>
     <p class="pre_title">가로등</p>
     <p>{{ marker.street_lamp }}</p>
+    <script>
+      addMarker("{{ marker.latitude|safe }}", "{{ marker.longitude|safe }}");
+    </script>
   </div>
 </a>
 {% endfor %} {% else %}
 <h5 style="text-align: center">아직 작성된 골목길이 없습니다.</h5>
-{% endif %}
+{% endif %} {% if not request.user.is_authenticated %}
+<button class="edit_road">작성하기</button>
+<h5 style="text-align: center; color: red" id="auth">
+  로그인한 사용자만 작성이 가능합니다.
+</h5>
+{% else %}
 <button class="edit_road" onclick="submitAddress();">작성하기</button>
+<h5 style="text-align: center; display: none" id="alert">
+  지도에서 위치를 찾아 클릭해주세요.
+</h5>
+{% endif %}
 <script>
-  var options = {
-    center: new kakao.maps.LatLng(33.450701, 126.570667),
-    level: 5,
-  };
-
-  var map = new kakao.maps.Map(document.getElementById("map"), options);
   var marker; // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
   var infowindow = new kakao.maps.InfoWindow({ zindex: 1 });
   var detailAddr;
@@ -79,6 +114,7 @@
       // 기존에 생성된 마커가 있다면 삭제
       marker.setMap(null);
     }
+    document.getElementById("view_arround").style.display = "block";
     latlng = mouseEvent.latLng;
     latitude = latlng.getLat();
     longitude = latlng.getLng();
@@ -129,6 +165,11 @@
     geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
   }
   function submitAddress() {
+    if (!latitude || !longitude) {
+      document.getElementById("alert").style =
+        "text-align: center; display:block; color:red;";
+      return;
+    }
     location.href =
       "edit/?lat=" + latitude + "&lng=" + longitude + "&address=" + address;
   }

@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from post.views import sounds, Post
+from post.views import sounds, Post, Post_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('user.urls')),
+    path('', include('user.urls'), name="main"),
     path('markers/', include('marker.urls')),
     path('sounds/', sounds, name="sounds"),
     path('countermeasure/',Post, name="post"),
+    path('coutermeasure/<int:pk>', Post_detail, name="detail"),
 ]
