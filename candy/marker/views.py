@@ -7,7 +7,7 @@ from django.utils import timezone
 def marker_view(request):
     # 기본 페이지
     if request.method == 'GET':
-        return render(request, 'marker/marker.html', {"title":"Map"})
+        return render(request, 'marker/marker.html', {"title":"Map", "status":0})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
     if request.method == 'POST':
         status = int(request.POST.get('status', 1))

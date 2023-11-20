@@ -1,6 +1,16 @@
-form{
+form#dform{
+    max-width: 375px;
+    margin: auto;
+    margin-right: 5px;
     padding: auto;
-    width: 375px;
+}
+
+div{
+    max-width: 375px;
+}
+
+div.safecandy{
+    text-align: center;
 }
 
 textarea {
@@ -18,7 +28,7 @@ button#submit{
     font-size: 20px;
     background-color: #7F50FF;
     color:white;
-    width:140px;
+    width:135px;
     height:50px;
     border-radius: 20px;
     border: none;
@@ -31,7 +41,7 @@ button#reset{
     font-size: 20px;
     background-color: white;
     color:grey;
-    width:140px;
+    width:135px;
     height:50px;
     border-radius: 20px;
     border:none;
@@ -78,7 +88,6 @@ button#good{
         cursor: pointer;
 }
 
-
 button#bad1{
     margin: 0px 6px;
     font-size: 18px;
@@ -116,4 +125,10 @@ button#good1{
     border:none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+}
+
+#sform{
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 10px;
 }

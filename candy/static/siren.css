@@ -1,66 +1,34 @@
-button {
-    width: 85px;
-    height: 85px;
-};
-
-
-div{
-    text-align: center;
-    align-items: center; justify-content: space-between;
-}
-
-#siren_image{
-    margin-left:auto;
-    margin-right:auto;
-    padding-left: 100px;
-}
-
 @keyframes flash {
-    0% {
-        background-color: #5274ED;
-    }
-    50% {
-        background-color: white;
-    }
-    100% {
-        background-color: #5274ED;
-    }
+  0% {
+    background-color: #5274ed;
+  }
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: #5274ed;
+  }
 }
-
+#soundBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
 .round-button {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    color: #333;
-    font-size: 16px;
-    border: 0.5px solid #ccc;
-    position: relative;
-    background: none;
-    cursor: pointer;
-    padding: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  color: #333;
+  font-size: 16px;
+  border: 0.5px solid #ccc;
+  position: relative;
+  background: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .round-button.selected {
-    animation: flash 1s infinite;
-}
-
-/* #myDiv{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 0.5px solid #ccc;
-    background-color: #5274ED;
-    animation: flash 1s infinite;
-}
- */
-tr{
-    padding-top: 50px;
-}
-
-
-.myAudio {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
+  animation: flash 1s infinite;
 }
