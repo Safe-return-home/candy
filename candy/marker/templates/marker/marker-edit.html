@@ -118,19 +118,41 @@
       <textarea
         name="body"
         placeholder="리뷰할 내용을 입력해 주세요."
-        style="width: 330px"
+        style="width: 330px; font-size: 15px"
+        class="search_bar"
         required
       >
       </textarea>
 
-      <br />
       <label for="photo-upload" class="upload-button"></label>
       <input type="file" name="image" id="photo-upload" />
     </div>
     <br />
-    <div>
-      <button id="reset" type="reset">취소</button>
-      <button id="submit" type="submit">작성</button>
+    <div style="display: flex; align-items: center; justify-content: center">
+      <button
+        id="reset"
+        type="reset"
+        style="
+          border-radius: 60px;
+          border: 1px solid var(--neutral-300, #eff0f6);
+          background: var(--neutral-100, #fff);
+          box-shadow: 0px 8px 25px 0px rgba(13, 10, 44, 0.06);
+        "
+      >
+        취소
+      </button>
+      <button
+        id="submit"
+        type="submit"
+        style="
+          border-radius: 60px;
+          border: 1px solid #f3eff6;
+          background: var(--unnamed, #7f50ff);
+          box-shadow: 0px 8px 25px 0px rgba(13, 10, 44, 0.06);
+        "
+      >
+        작성
+      </button>
     </div>
     <script>
       const candy_value = 0;

@@ -1,562 +1,146 @@
-{% extends 'base.html' %}
-{% block content %} {% load static %}
-<style>
-
-  #title {
-    /* 골목길 조회하기 */
-    width: 189px;
-    height: 31px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 30px;
-    /* identical to box height */
-    text-align: center;
-
-    color: #000000;
-  }
-
-  #icon {
-    /* 심볼 */
-    width: 34px;
-    height: 34px;
-  }
-
-  #list {
-    /* Group 1 */
-    width: 24px;
-    height: 17px;
-  }
-
-  #plus {
-    /* 수정 */
-    width: 50px;
-    height: 14px;
-    background-color: transparent;
-    border: none;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-
-    color: #aaaaaa;
-  }
-
-  #minus {
-    /* 삭제 */
-    width: 50px;
-    height: 14px;
-    background-color: transparent;
-    border: none;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-
-    color: #aaaaaa;
-  }
-
-  #address {
-    /* 주소 */
-    width: 42px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-
-    color: #000000;
-  }
-
-  #address-text {
-    /* 어쩌구 저쩌구@@@@ */
-    width: 151px;
-    height: 19px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    /* identical to box height */
-
-    color: #aaaaaa;
-  }
-
-  #address-box {
-    /* Rectangle 28 */
-    width: 300px;
-    height: 35px;
-
-    /* Neutral/100 */
-    background: #ffffff;
-    /* Neutral/300 */
-    border: 1px solid #eff0f7;
-    box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
-    border-radius: 10px;
-  }
-
-  #light {
-    /* 가로등 수 */
-    width: 90px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-
-    color: #000000;
-  }
-
-  #bad-box {
-    /* Rectangle 1693 */
-
-    /* Neutral/100 */
-    background: #ffffff;
-    box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
-      0px -2px 4px rgba(20, 20, 43, 0.02),
-      0px 10px 24px rgba(20, 20, 43, 0.04);
-    border-radius: 10px;
-  }
-
-  #bad-text {
-    /* 별로예요 */
-    width: 70px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    /* identical to box height */
-
-    color: #000000;
-  }
-
-  #soso-box {
-    /* Rectangle 1694 */
-
-    background: #d3c3f7;
-    box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
-      0px -2px 4px rgba(20, 20, 43, 0.02),
-      0px 10px 24px rgba(20, 20, 43, 0.04);
-    border-radius: 10px;
-  }
-
-  #soso-text {
-    /* 적당해요 */
-    width: 70px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    /* identical to box height */
-
-    color: #000000;
-  }
-
-  #good-box {
-    /* Rectangle 1695 */
-
-    /* Neutral/100 */
-    background: #ffffff;
-    box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
-      0px -2px 4px rgba(20, 20, 43, 0.02),
-      0px 10px 24px rgba(20, 20, 43, 0.04);
-    border-radius: 10px;
-  }
-
-  #good-text {
-    /* 만족해요 */
-    width: 70px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    /* identical to box height */
-
-    color: #000000;
-  }
-
-  #people {
-    /* 유동 인구 수 */
-    width: 107px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-
-    color: #000000;
-  }
-
-  #p-bad-box {
-    /* Rectangle 1693 */
-
-    /* Neutral/100 */
-    background: #ffffff;
-    box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
-      0px -2px 4px rgba(20, 20, 43, 0.02),
-      0px 10px 24px rgba(20, 20, 43, 0.04);
-    border-radius: 10px;
-  }
-
-  #p-bad-text {
-    /* 별로예요 */
-    width: 70px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    /* identical to box height */
-
-    color: #000000;
-  }
-
-  #p-soso-box {
-    /* Rectangle 1694 */
-
-    /* Neutral/100 */
-    background: #ffffff;
-    box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
-      0px -2px 4px rgba(20, 20, 43, 0.02),
-      0px 10px 24px rgba(20, 20, 43, 0.04);
-    border-radius: 10px;
-  }
-
-  #p-soso-text {
-    /* 적당해요 */
-    width: 70px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    /* identical to box height */
-
-    color: #000000;
-  }
-
-  #p-good-box {
-    /* Rectangle 1695 */
-
-    background: #d3c3f7;
-    box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
-      0px -2px 4px rgba(20, 20, 43, 0.02),
-      0px 10px 24px rgba(20, 20, 43, 0.04);
-    border-radius: 10px;
-  }
-
-  #p-good-text {
-    /* 만족해요 */
-    width: 70px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    /* identical to box height */
-
-    color: #ffffff;
-  }
-
-  #safe-candy {
-    /* 안전 캔디 */
-    width: 400px;
-    height: 19px;
-    border: none;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-
-    color: #000000;
-  }
-
-  #candy-box {
-    box-sizing: border-box;
-    background: transparent;
-    border: none;
-  }
-
-  #review {
-    /* 자세한 리뷰 */
-
-    position: relative;
-    width: 107px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-
-    color: #000000;
-  }
-
-  #review-box {
-    /* Rectangle 28 */
-    box-sizing: border-box;
-
-    /* Neutral/100 */
-    background: #ffffff;
-    /* Neutral/300 */
-    border: 1px solid #eff0f7;
-    box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
-    border-radius: 10px;
-  }
-
-  #review-text {
-    /* 너무 늦은 밤에는 무서울 것 같기는 하지만 나름 괜찮은 것 같아요요가로등이 깜빡거려요... */
-
-    position: relative;
-    width: 300px;
-    height: 19px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-
-    color: #aaaaaa;
-  }
-
-  #text-name {
-    /* 익명  */
-
-    position: relative;
-    width: 231px;
-    height: 36px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-
-    color: #977dff;
-  }
-
-  #text {
-    /* 아직도 가로등이 깜빡거릴까요? */
-
-    position: relative;
-    width: 231px;
-    height: 36px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-
-    color: #000000;
-  }
-
-  #plusplus {
-    /* 수정 */
-    position: relative;
-    width: 50px;
-    height: 14px;
-    background-color: transparent;
-    border: none;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-
-    color: #aaaaaa;
-  }
-
-  #minusminus {
-    /* 삭제 */
-    width: 50px;
-    height: 14px;
-    background-color: transparent;
-    border: none;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-
-    color: #aaaaaa;
-  }
-
-  #form{
-    display:flex;
-    justify-content:center;
-  }
-
-  #commAddBox {
-    /* Rectangle 30 */
-
-    position: relative;
-    width: 210px;
-    height: 50px;
-
-    /* Neutral/100 */
-    background: #ffffff;
-    /* Neutral/300 */
-    border: 1px solid #eff0f7;
-    border-radius: 60px;
-  }
-
-  #commAddBtn {
-    /* Rectangle 31 */
-    width: 70px;
-    height: 50px;
-    margin-left:20px;
-
-    /* 퍼플_메인컬러 */
-    background: #7f50ff;
-    border: 1px solid #f3eff7;
-    box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
-    border-radius: 60px;
-    color:#ffffff;
-  }
-
-  #comment-box {
-    width: 100%;
-  }
-</style>
-<div>
-  <div id="address">주소</div>
-  <div id="address-box">{{ marker.address }}</div>
-
-  {% if request.user.pk == marker.user.pk %}
-  <a href="{% url 'marker:detail_delete' marker.id %}" id="minus">삭제</a>
-  <a href="{% url 'marker:detail_update_page' marker.id %}" id="plus">수정</a>
-  {% endif %}
-
-  <div id="light" style="font-weight: bolder">가로등 수</div>
-  <div style="list-style: none">
-    <span id="bad-box">
-      <div id="bad-text">별로예요</div>
-    </span>
-    <span id="soso-box">
-      <div id="soso-text">적당해요</div>
-    </span>
-    <span id="good-box">
-      <div id="good-text">만족해요</div>
-    </span>
-
-    <div id="people" style="font-weight: bolder">유동 인구 수</div>
-    <div style="list-style: none;">
-      <span id="p-bad-box">
-        <div id="p-bad-text">별로예요</div>
-      </span>
-      <span id="p-soso-box">
-        <div id="p-soso-text">적당해요</div>
-      </span>
-      <span id="p-good-box">
-        <div id="p-good-text">만족해요</div>
-      </span>
+{% extends 'base.html' %} {% block content %} {% load static %}
+<div id="sform">
+  <h2>주소</h2>
+  <p id="address_print">{{marker.address}}</p>
+  <h2>가로등 수</h2>
+  <div class="numtagbox">
+    {% if marker.street_lamp == "별로예요" %}
+    <div class="my-numtag" id="bad" style="background-color: #d3c3f7">
+      별로예요
     </div>
-
-    <div id="safe-candy">안전 캔디</div>
-    <div id="candy-box">
-      <span id="candy-1">
-        <img src="{% static 'images/candy_grey.png' %}" style="width: 50px; height: 50px"/>
-      </span>
-      <span id="candy-2">
-        <img src="{% static 'images/candy_grey.png' %}" style="width: 50px; height: 50px"/>
-      </span>
-      <span id="candy-3">
-        <img src="{% static 'images/candy_grey.png' %}" style="width: 50px; height: 50px"/>
-      </span>
-      <span id="candy-4">
-        <img src="{% static 'images/candy_grey.png' %}" style="width: 50px; height: 50px"/>
-      </span>
-      <span id="candy-5">
-        <img src="{% static 'images/candy_grey.png' %}" style="width: 50px; height: 50px"/>
-      </span>
+    {% else %}
+    <div class="my-numtag" id="bad">별로예요</div>
+    {% endif %} {% if marker.street_lamp == "적당해요" %}
+    <div class="my-numtag" id="bad" style="background-color: #d3c3f7">
+      적당해요
     </div>
-    <div id="review">자세한 리뷰</div>
-    <div id="review-box">
-      <div id="review-text">
-        {{ marker.body }}
+    {% else %}
+    <div class="my-numtag" id="bad">적당해요</div>
+    {% endif %}{% if marker.street_lamp == "만족해요" %}
+    <div class="my-numtag" id="bad" style="background-color: #d3c3f7">
+      만족해요
+    </div>
+    {% else %}
+    <div class="my-numtag" id="bad">만족해요</div>
+    {% endif %}
+  </div>
+
+  <h2>유동 인구 수</h2>
+  <div class="numtagbox">
+    {% if marker.street_lamp == "별로예요" %}
+    <div class="my-numtag" id="bad" style="background-color: #d3c3f7">
+      별로예요
+    </div>
+    {% else %}
+    <div class="my-numtag" id="bad">별로예요</div>
+    {% endif %} {% if marker.street_lamp == "적당해요" %}
+    <div class="my-numtag" id="bad" style="background-color: #d3c3f7">
+      적당해요
+    </div>
+    {% else %}
+    <div class="my-numtag" id="bad">적당해요</div>
+    {% endif %} {% if marker.street_lamp == "만족해요" %}
+    <div class="my-numtag" id="bad" style="background-color: #d3c3f7">
+      만족해요
+    </div>
+    {% else %}
+    <div class="my-numtag" id="bad">만족해요</div>
+    {% endif %}
+  </div>
+  <h2>안전 캔디</h2>
+  <div>
+    <div class="safecandy">
+      {% with rating_count=marker.rating %} {% for i in ''|rjust:rating_count %}
+      <img src="/static/images/candy_purple.png" width="40px" />
+      {% endfor %} {% endwith %}
+    </div>
+  </div>
+  <div>
+    <h2>자세한 리뷰</h2>
+    <p id="address_print">{{marker.body}}</p>
+  </div>
+  <div id="comment-box">
+    {% for comment in comments %}
+    <div
+      id="text-name"
+      style="
+        color: #977dff;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        margin-top: 20px;
+      "
+    >
+      {{ comment.user.userName }}
+    </div>
+    <div
+      id="text"
+      style="
+        color: #000;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      "
+    >
+      {{ comment.body }}
+    </div>
+    {%endfor %}
+    <form
+      id="form"
+      action="{% url 'marker:marker_detail' pk=marker.pk %}"
+      method="post"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      {% csrf_token %}
+      <div class="search_bar" style="width: 250px">
+        <input
+          type="text"
+          name="body"
+          id="commAddBox"
+          placeholder="댓글을 입력해주세요"
+        />
       </div>
-    </div>
-    <script src="./date.js"></script>
-    <span id="date"></span>
+      <button
+        id="commAddBtn"
+        type="submit"
+        style="
+          border-radius: 60px;
+          border: 1px solid #f3eff6;
+          background: var(--unnamed, #7f50ff);
+          box-shadow: 0px 8px 25px 0px rgba(13, 10, 44, 0.06);
+          width: 70px;
+          height: 50px;
+          color: #fff;
+          text-align: center;
+          font-family: Inter;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        "
+      >
+        작성
+      </button>
+    </form>
+  </div>
 
-    <div id="comment-box">
-      {% for comment in comments %}
-      <div id="text-name">{{ comment.user.userName }}</div>
-      <div id="text">{{ comment.body }}</div>
-      <button id="plusplus">수정</button>
-      <button id="minusminus">삭제</button>
-      {%endfor %}
-      <form id="form" action="{% url 'marker:marker_detail' pk=marker.pk %}" method="post">
-        {% csrf_token %}
-        <div>
-          <input
-            type="text"
-            name="body"
-            id="commAddBox"
-            placeholder="댓글을 입력해주세요"
-          />
-        </div>
-        <button id="commAddBtn" type="submit">작성</button>
-      </form>
-    </div>
+  <!--  <input-->
+  <!--    type="text"-->
+  <!--    name="latitude"-->
+  <!--    id="latitude"-->
+  <!--    value="33.45078616991599"-->
+  <!--    style="display: none"-->
+  <!--  />-->
+  <!--  <input-->
+  <!--    type="text"-->
+  <!--    name="longitude"-->
+  <!--    id="longitude"-->
+  <!--    value="126.57059088071355"-->
+  <!--    style="display: none"-->
+  <!--  />-->
 </div>
-<!--</div>-->
 {% endblock %}
-
-
-
-<!--<div>가로등 수: {{ marker.street_lamp }}</div>-->
-<!--<div>유동인구 수: {{ marker.population }}</div>-->
-<!--<div>안전캔디: {{ marker.rating }}</div>-->
-<!--<div>자세한리뷰: {{ marker.body }}</div>-->
-<!--<div>작성일: {{ marker.regTime | date:"Y.m.d" }}</div>-->
-
-
-<!--{% for comment in comments%}-->
-<!--<br />-->
-<!--<div>이름: {{ comment.user.userName }}</div>-->
-<!--<div>내용: {{ comment.body }}</div>-->
-<!--<div>작성일: {{ comment.regTime }}</div>-->
-<!--{% endfor %}-->
-
-<!--<form action="{% url 'marker:marker_detail' pk=marker.pk %}" method="post">-->
-<!--  {% csrf_token %}-->
-<!--  <input type="text" name="body" id="body" />-->
-<!--  <button type="submit">댓글쓰기</button>-->
-<!--</form>-->
-
-

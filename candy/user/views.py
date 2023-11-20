@@ -7,7 +7,7 @@ from django.views.generic import View, CreateView, UpdateView, DeleteView
 from .models import User
 import requests
 
-uri = "http://127.0.0.1:8000"
+uri = "http://172.30.1.73:8080"
 
 # 로그인 템플릿
 def oauth_login(request):

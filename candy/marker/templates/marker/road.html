@@ -20,6 +20,7 @@
   };
 
   var map = new kakao.maps.Map(document.getElementById("map"), options);
+  var lastMarkerPosition = 0;
 </script>
 {% if markers %} {% for marker in markers %}
 <script>
@@ -70,13 +71,20 @@
 <h5 style="text-align: center; display: none" id="alert">
   지도에서 위치를 찾아 클릭해주세요.
 </h5>
+<script>
+  lastMarkerPosition = new kakao.maps.LatLng(
+    lastMarker.latitude,
+    lastMarker.longitude
+  );
+</script>
 {% endif %}
 <script>
   var marker; // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
   var infowindow = new kakao.maps.InfoWindow({ zindex: 1 });
   var detailAddr;
-
-  if (navigator.geolocation) {
+  if (lastMarkerPosition !== 0) {
+    displayMarker(lastMarkerPosition);
+  } else if (navigator.geolocation) {
     // GeoLocation을 이용해서 접속 위치를 얻어옵니다
     navigator.geolocation.getCurrentPosition(function (position) {
       var lat = position.coords.latitude, // 위도
@@ -107,7 +115,9 @@
     });
 
     map.setCenter(locPosition);
+    console.log("원래 센터");
   }
+
   var latlng, latitude, longitude;
   kakao.maps.event.addListener(map, "click", function (mouseEvent) {
     if (marker) {
