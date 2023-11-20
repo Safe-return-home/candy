@@ -1,3 +1,4 @@
+{% load static %}
 <div class="header">
   <div
     style="
@@ -9,7 +10,7 @@
     "
   >
     <img
-      src="../static/images/symbol.png"
+      src="{% static '/images/symbol.png' %}"
       width="34px"
       height="34px"
       onclick="goMain()"
@@ -28,7 +29,7 @@
       {{title}}
     </p>
     <img
-      src="../static/images/menu.png"
+      src="{% static '/images/menu.png' %}"
       width="24px"
       height="17px"
       onclick="toggleNav()"
@@ -84,7 +85,7 @@
 
 <script>
   function goMain() {
-    location.href = "";
+    location.href = "{% url 'marker:markers' %}";
   }
   var navstatus = 0;
   function toggleNav() {
