@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-<div id="sform">
-  <form action="{% url 'marker:marker_edit' %}" id="dform" method="post">
+<div id="sform" >
+  <form action="{% url 'marker:marker_edit' %}" id="dform" method="post" style="with:305px; margin: 0 auto;">
     {% csrf_token %}
-    <h2>주소</h2>
+    <h2 style="font-size:18px; margin-left:20px;">주소</h2>
     <input
       type="text"
       name="latitude"
@@ -19,7 +19,7 @@
       style="display: none"
       required
     />
-    <p id="address_print"></p>
+    <p id="address_print" style="margin-left:18px;"></p>
     <script>
       var urlParams = new URLSearchParams(window.location.search);
       var lat = urlParams.get("lat");
@@ -29,7 +29,7 @@
       document.getElementById("longitude").value = lng;
       document.getElementById("address_print").innerText = address;
     </script>
-    <h2>가로등 수</h2>
+    <h2 style="font-size:18px; margin-left:20px;">가로등 수</h2>
     <input
       type="text"
       name="street_lamp"
@@ -37,17 +37,18 @@
       style="display: none"
       required
     />
-    <button class="my-button" id="bad" onclick="changeButtonColor_bad()">
+    <div style="display:flex; justify-content:beetween-">
+    <button class="my-button" id="bad" onclick="changeButtonColor_bad()" style="width:90px;font-size:16px;">
       별로예요
     </button>
-    <button class="my-button" id="soso" onclick="changeButtonColor_soso()">
+    <button class="my-button" id="soso" onclick="changeButtonColor_soso()" style="width:90px;font-size:16px;">
       적당해요
     </button>
-    <button class="my-button" id="good" onclick="changeButtonColor_good()">
+    <button class="my-button" id="good" onclick="changeButtonColor_good()" style="width:90px;font-size:16px;">
       만족해요
     </button>
-
-    <h2>유동 인구 수</h2>
+    </div>
+    <h2 style="font-size:18px; margin-left:20px;">유동 인구 수</h2>
     <input
       type="text"
       name="population"
@@ -55,16 +56,16 @@
       style="display: none"
       required
     />
-    <button class="my-button" id="bad1" onclick="changeButtonColor_bad1()">
+    <button class="my-button" id="bad1" onclick="changeButtonColor_bad1()" style="width:90px;font-size:16px;">
       별로예요
     </button>
-    <button class="my-button" id="soso1" onclick="changeButtonColor_soso1()">
+    <button class="my-button" id="soso1" onclick="changeButtonColor_soso1()" style="width:90px;font-size:16px;">
       적당해요
     </button>
-    <button class="my-button" id="good1" onclick="changeButtonColor_good1()">
+    <button class="my-button" id="good1" onclick="changeButtonColor_good1()" style="width:90px;font-size:16px;">
       만족해요
     </button>
-    <h2>안전 캔디</h2>
+    <h2 style="font-size:18px; margin-left:20px;">안전 캔디</h2>
     <div>
       <div class="safecandy">
         <input
@@ -113,7 +114,7 @@
       </div>
     </div>
     <div>
-      <h2>자세한 리뷰</h2>
+      <h2 style="font-size:18px; margin-left:20px;">자세한 리뷰</h2>
 
       <textarea
         name="body"
@@ -125,7 +126,7 @@
       </textarea>
 
       <label for="photo-upload" class="upload-button"></label>
-      <input type="file" name="image" id="photo-upload" />
+      <input type="file" name="image" id="photo-upload" style="margin-left:20px;"/>
     </div>
     <br />
     <div style="display: flex; align-items: center; justify-content: center">
