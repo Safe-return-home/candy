@@ -5,6 +5,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 90px;
     "
   >
     <img
@@ -26,11 +27,73 @@
     >
       {{title}}
     </p>
-    <img src="../static/images/menu.png" width="24px" height="17px" />
+    <img
+      src="../static/images/menu.png"
+      width="24px"
+      height="17px"
+      onclick="toggleNav()"
+    />
   </div>
 </div>
+<div
+  class="nav_tab"
+  id="nav_tab"
+  style="
+    width: 375px;
+    margin-left: -10px;
+    position: relative;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 1px solid var(--neutral-300, #eff0f6);
+    box-shadow: 0px 8px 25px -4px rgba(13, 10, 44, 0.06);
+    padding: 20px 40px;
+    box-sizing: border-box;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    z-index: 999;
+    position: absolute;
+    top: 90px;
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+  "
+>
+  {% if title == "Map" %}
+  <a href="{% url 'marker:markers' %}" style="height: 20px; color: #7f50ff"
+    >Map</a
+  >
+  {% else %}
+  <a href="{% url 'marker:markers' %}" style="height: 20px">Map</a>
+  {% endif %} {% if title == "대처요령" %}
+  <a href="{% url 'post' %}" style="height: 20px; color: #7f50ff">대처요령</a>
+  {% else %}
+  <a href="{% url 'post' %}" style="height: 20px">대처요령</a>
+  {% endif %} {% if title == "사이렌" %}<a
+    href="{% url 'sounds' %}"
+    style="height: 20px; color: #7f50ff"
+    >사이렌</a
+  >
+  {% else %}
+  <a href="{% url 'sounds' %}" style="height: 20px">사이렌</a>
+  {% endif %}
+</div>
+
 <script>
   function goMain() {
     location.href = "";
+  }
+  var navstatus = 0;
+  function toggleNav() {
+    if (navstatus == 0) {
+      navstatus = 1;
+      document.getElementById("nav_tab").style.display = "flex";
+    } else {
+      navstatus = 0;
+      document.getElementById("nav_tab").style.display = "none";
+    }
   }
 </script>
