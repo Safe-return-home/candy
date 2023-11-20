@@ -450,7 +450,6 @@
 
   #comment-box {
     width: 100%;
-
   }
 </style>
 <div>
@@ -513,23 +512,25 @@
     </div>
     <script src="./date.js"></script>
     <span id="date"></span>
-    {% for comment in comments %}
+
     <div id="comment-box">
-      <div id="text-name">익명</div>
-      <div id="text">아직도 가로등이 깜빡거릴까요?</div>
+      {% for comment in comments %}
+      <div id="text-name">{{ comment.user.userName }}</div>
+      <div id="text">{{ comment.body }}</div>
       <button id="plusplus">수정</button>
       <button id="minusminus">삭제</button>
-    {%endfor %}
+      {%endfor %}
       <form id="form" action="{% url 'marker:marker_detail' pk=marker.pk %}" method="post">
+        {% csrf_token %}
         <div>
           <input
             type="text"
-            name="comment"
+            name="body"
             id="commAddBox"
             placeholder="댓글을 입력해주세요"
           />
         </div>
-        <button id="commAddBtn">작성</button>
+        <button id="commAddBtn" type="submit">작성</button>
       </form>
     </div>
 </div>
