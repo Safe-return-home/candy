@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 import requests
 from .models import Marker, Comment
+from django.core.paginator import Paginator
 from django.utils import timezone
 
 def marker_view(request):
     # 기본 페이지
     if request.method == 'GET':
-        return render(request, 'marker/marker.html', {})
+        return render(request, 'marker/marker.html', {"title":"Map", "status":0})
     # 지도 클릭 (마커 리스트 + 기본 페이지)
     if request.method == 'POST':
         status = int(request.POST.get('status', 1))
@@ -16,8 +17,9 @@ def marker_view(request):
             latitude__range=(latitude - 0.002, latitude + 0.002),
             longitude__range=(longitude - 0.002, longitude + 0.002)
         )
+        return render(request, 'marker/marker.html', {"markers": filtered_markers, "status": status, "title":"Map"})
 
-        return render(request, 'marker/marker.html', {"markers": filtered_markers, "status": status})
+
 
 
 # 지도 상세
@@ -38,9 +40,9 @@ def marker_detail_view(request, pk):
     # 기본 페이지
     comments = marker.comments.all()
     print(comments)
-    return render(request, 'marker/marker-detail.html', {"marker": marker, "comments": comments})
+    return render(request, 'marker/marker-detail.html', {"marker": marker, "comments": comments, "title":"골목길 조회하기" })
 
-# 지도 작성 (미완성)
+# 지도 작성
 def marker_edit_view(request):
     # 미인증 유저 예외처리
     if not request.user.is_authenticated:
@@ -56,7 +58,7 @@ def marker_edit_view(request):
             'lng': lng,
             'address': address,
         }
-        return render(request, './marker/marker-edit.html', data)
+        return render(request, 'marker/marker-edit.html', {"data":data, "title":"골목길 작성하기"})
 
     # 작성 클릭 시
     if request.method == 'POST':
@@ -90,7 +92,7 @@ def marker_edit_view(request):
 
 # police 조회
 def marker_police_view(request):
-    return render(request, 'marker/police.html')
+    return render(request, 'marker/police.html', {"title":"Map"})
 
 # 지도 마커 삭제
 def marker_detail_delete(request, pk):
@@ -113,7 +115,7 @@ def marker_detail_update_page(request, pk):
             redirect('marker:marker_detail', pk=pk)
     except Marker.DoesNotExist:
         marker_update=None
-    return render(request,'marker/update.html', {'marker':marker_update})
+    return render(request,'marker/update.html', {'marker':marker_update, "title":"골목길 수정하기"})
 
 # 지도 마커 수정 (post)
 def marker_detail_update(request,pk):
