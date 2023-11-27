@@ -1,113 +1,73 @@
 {% extends 'base.html' %} {% block content %} {%load static%}
-<div>
-  <table id="siren_image" text-align="center">
-    <tr>
-      <td>
-        <button
-          class="round-button"
-          href=""
-          value="play"
-          onclick="play1()"
-          width="82"
-          height="82"
-        >
-          <div id="myDiv">
-            <img
-              src="{% static 'images/policecar.png' %}"
-              width="82"
-              height="81"
-            />
-          </div>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button
-          class="round-button"
-          href=""
-          value="play"
-          onclick="play2()"
-          width="82"
-          height="82"
-        >
-          <div id="myDiv">
-            <img
-              src="{% static 'images/firetruck.png' %}"
-              width="63.94"
-              height="45.4"
-            />
-          </div>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button
-          class="round-button"
-          href=""
-          value="play"
-          onclick="play3()"
-          width="82"
-          height="82"
-        >
-          <div id="myDiv">
-            <img
-              src="{% static 'images/ambulance.png' %}"
-              width="50"
-              height="50"
-            />
-          </div>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button
-          class="round-button"
-          href=""
-          value="play"
-          onclick="play4()"
-          width="82"
-          height="82"
-        >
-          <div id="myDiv">
-            <img
-              src="{% static 'images/whistle.png' %}"
-              width="62"
-              height="67"
-            />
-          </div>
-        </button>
-      </td>
-    </tr>
-  </table>
+<div id="soundBox">
+  <audio id="policecar">
+    <source src="{% static 'audios/policecar.mp3' %}" type="audio/mpeg" />
+    당신 브라우저는 AUDIO 태그 지원 X</audio
+  ><audio id="firetruck">
+    <source src="{% static 'audios/firetruck.mp3' %}" type="audio/mpeg" />
+    당신 브라우저는 AUDIO 태그 지원 X</audio
+  ><audio id="ambulance">
+    <source src="{% static 'audios/ambulance.mp3' %}" type="audio/mpeg" />
+    당신 브라우저는 AUDIO 태그 지원 X</audio
+  ><audio id="whistle">
+    <source src="{% static 'audios/whistle.mp3' %}" type="audio/mpeg" />
+    당신 브라우저는 AUDIO 태그 지원 X
+  </audio>
+  <button class="round-button" href="" value="play" onclick="play1()">
+    <img
+      src="{% static 'images/policecar.png' %}"
+      width="108px"
+      height="58px"
+    />
+  </button>
+  <button class="round-button" href="" value="play" onclick="play2()">
+    <img
+      src="{% static 'images/firetruck.png' %}"
+      width="108px"
+      height="58px"
+    />
+  </button>
+  <button class="round-button" href="" value="play" onclick="play3()">
+    <img src="{% static 'images/ambulance.png' %}" width="92px" height="75px" />
+  </button>
+  <button class="round-button" href="" value="play" onclick="play4()">
+    <img src="{% static 'images/whistle.png' %}" width="90px" height="49px" />
+  </button>
 </div>
 <script>
-  var buttons = document.getElementsByClassName("round-button");
+  var policecar = document.getElementById("policecar");
+  var firetruck = document.getElementById("firetruck");
+  var ambulance = document.getElementById("ambulance");
+  var whistle = document.getElementById("whistle");
 
   function play1() {
-    var audio = new Audio("/audio/policecar.mp3");
-    var audio = new Audio("{% static '/audio/policecar.mp3' %}");
-    audio.play();
+    if (policecar.paused) {
+      policecar.play();
+    } else {
+      document.getElementById("policecar").pause();
+    }
   }
 
   function play2() {
-    var audio = new Audio("/audio/firetruck.mp3");
-    var audio = new Audio("{% static '/audio/firetruck.mp3' %}");
-    audio.play();
+    if (firetruck.paused) {
+      firetruck.play();
+    } else {
+      document.getElementById("firetruck").pause();
+    }
   }
-
   function play3() {
-    var audio = new Audio("/audio/ambulance.mp3");
-    var audio = new Audio("{% static '/audio/ambulance.mp3' %}");
-    audio.play();
+    if (ambulance.paused) {
+      ambulance.play();
+    } else {
+      document.getElementById("ambulance").pause();
+    }
   }
-
   function play4() {
-    var audio = new Audio("/audio/whistle.mp3");
-    var audio = new Audio("{% static '/audio/whistle.mp3' %}");
-    audio.play();
+    if (whistle.paused) {
+      whistle.play();
+    } else {
+      document.getElementById("whistle").pause();
+    }
   }
 </script>
 {% endblock %}

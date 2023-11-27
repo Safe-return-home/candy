@@ -1,14 +1,4 @@
 .container {
-<<<<<<< HEAD
-  position: relative;
-  top: -8.25%;
-  bottom: 65.02%;
-  width: 375px;
-  height: 351px;
-  margin: 0 auto;
-=======
-  /* Rectangle 32 */
-
   box-sizing: border-box;
 
   position: relative;
@@ -17,7 +7,6 @@
   top: -8.25%;
   bottom: 65.02%;
   width: 100%;
->>>>>>> 6d603c7382661d5407ea79c529c405e269447202
 
   /* Neutral/100 */
 
